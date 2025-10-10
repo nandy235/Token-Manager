@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Trash2, AlertCircle, Save, Upload } from 'lucide-react';
+import { Plus, Trash2, AlertCircle, Save } from 'lucide-react';
 
 // Auto-detect environment
 const API_URL = import.meta.env.VITE_API_URL || 
@@ -12,14 +12,17 @@ export default function TokenManager() {
   const [newShopName, setNewShopName] = useState('');
   const [saveMessage, setSaveMessage] = useState('');
   const [loading, setLoading] = useState(true);
+  const [tokenCap, setTokenCap] = useState(200);
+  const [editingCap, setEditingCap] = useState(false);
+  const [tempCap, setTempCap] = useState(200);
   
-  const MAX_TOKENS = 200;
   const totalTokensUsed = shops.reduce((sum, shop) => sum + shop.tokens, 0);
-  const remainingTokens = MAX_TOKENS - totalTokensUsed;
+  const remainingTokens = tokenCap - totalTokensUsed;
 
-  // Fetch shops from API on mount
+  // Fetch shops and token cap from API on mount
   useEffect(() => {
     fetchShops();
+    fetchTokenCap();
   }, []);
 
   const fetchShops = async () => {
@@ -33,6 +36,17 @@ export default function TokenManager() {
       setSaveMessage('Error connecting to server!');
       setTimeout(() => setSaveMessage(''), 3000);
       setLoading(false);
+    }
+  };
+
+  const fetchTokenCap = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/settings/token-cap`);
+      const data = await response.json();
+      setTokenCap(data.tokenCap);
+      setTempCap(data.tokenCap);
+    } catch (error) {
+      console.error('Failed to fetch token cap:', error);
     }
   };
 
@@ -75,7 +89,7 @@ export default function TokenManager() {
     const otherShopsTokens = totalTokensUsed - shop.tokens;
     
     // Ensure we don't exceed the cap
-    const maxAllowed = MAX_TOKENS - otherShopsTokens;
+    const maxAllowed = tokenCap - otherShopsTokens;
     const newTokenValue = Math.min(Math.max(0, numValue), maxAllowed);
     
     try {
@@ -101,64 +115,194 @@ export default function TokenManager() {
     }
   };
 
-  const saveData = () => {
-    const dataStr = JSON.stringify(shops, null, 2);
-    const dataBlob = new Blob([dataStr], { type: 'application/json' });
-    const url = URL.createObjectURL(dataBlob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'shop-tokens.json';
-    link.click();
-    URL.revokeObjectURL(url);
-    
-    setSaveMessage('Data exported successfully!');
-    setTimeout(() => setSaveMessage(''), 3000);
+  const updateTokenCap = async () => {
+    try {
+      const newCap = parseInt(tempCap);
+      if (newCap < totalTokensUsed) {
+        setSaveMessage('Token cap cannot be less than currently allocated tokens!');
+        setTimeout(() => setSaveMessage(''), 3000);
+        setTempCap(tokenCap);
+        setEditingCap(false);
+        return;
+      }
+      
+      const response = await fetch(`${API_URL}/api/settings/token-cap`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tokenCap: newCap })
+      });
+      const data = await response.json();
+      setTokenCap(data.tokenCap);
+      setEditingCap(false);
+      setSaveMessage('Token cap updated successfully!');
+      setTimeout(() => setSaveMessage(''), 3000);
+    } catch (error) {
+      console.error('Failed to update token cap:', error);
+      setSaveMessage('Error updating token cap!');
+      setTimeout(() => setSaveMessage(''), 3000);
+    }
   };
 
-  const loadData = () => {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.json';
-    input.onchange = async (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = async (event) => {
-          try {
-            const loadedShops = JSON.parse(event.target.result);
-            if (Array.isArray(loadedShops)) {
-              // Upload to backend
-              const response = await fetch(`${API_URL}/api/shops/bulk`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ shops: loadedShops })
-              });
-              const data = await response.json();
-              setShops(data);
-              setSaveMessage('Data imported successfully!');
-              setTimeout(() => setSaveMessage(''), 3000);
-            } else {
-              setSaveMessage('Invalid file format!');
-              setTimeout(() => setSaveMessage(''), 3000);
-            }
-          } catch (error) {
-            console.error('Error importing data:', error);
-            setSaveMessage('Error reading file!');
-            setTimeout(() => setSaveMessage(''), 3000);
+  const saveData = () => {
+    const printWindow = window.open('', '_blank');
+    const currentDate = new Date().toLocaleDateString();
+    
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Shop Token Manager - Report</title>
+        <style>
+          body { 
+            font-family: Arial, sans-serif; 
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
           }
-        };
-        reader.readAsText(file);
-      }
-    };
-    input.click();
+          h1 { color: #4F46E5; margin-bottom: 10px; }
+          .info { color: #666; margin-bottom: 30px; }
+          table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0;
+          }
+          th, td { 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            text-align: left; 
+          }
+          th { 
+            background-color: #4F46E5; 
+            color: white;
+          }
+          tr:nth-child(even) { background-color: #f9f9f9; }
+          .summary { 
+            background: #EEF2FF; 
+            padding: 20px; 
+            border-radius: 8px;
+            margin: 20px 0;
+          }
+          .summary-item {
+            display: inline-block;
+            margin-right: 40px;
+          }
+          .summary-label { 
+            font-weight: bold; 
+            color: #666;
+          }
+          .summary-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4F46E5;
+          }
+          @media print {
+            body { padding: 20px; }
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Shop Token Manager</h1>
+        <p class="info">Generated on: ${currentDate}</p>
+        
+        <div class="summary">
+          <div class="summary-item">
+            <div class="summary-label">Total Token Cap</div>
+            <div class="summary-value">${tokenCap}</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Total Shops</div>
+            <div class="summary-value">${shops.length}</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Tokens Used</div>
+            <div class="summary-value">${totalTokensUsed}</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Remaining</div>
+            <div class="summary-value">${remainingTokens}</div>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>S. No</th>
+              <th>Shop Name</th>
+              <th>Tokens Allocated</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${shops.map((shop, index) => `
+              <tr>
+                <td>${index + 1}</td>
+                <td>${shop.name}</td>
+                <td>${shop.tokens}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+
+        <script>
+          window.onload = function() {
+            window.print();
+          }
+        </script>
+      </body>
+      </html>
+    `;
+    
+    printWindow.document.write(htmlContent);
+    printWindow.document.close();
+    
+    setSaveMessage('Print dialog opened! Choose "Save as PDF" in the print dialog.');
+    setTimeout(() => setSaveMessage(''), 5000);
   };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Shop Token Manager</h1>
-          <p className="text-gray-600 mb-6">Total Token Cap: {MAX_TOKENS}</p>
+          <div className="flex items-center gap-3 mb-6">
+            <p className="text-gray-600">Total Token Cap:</p>
+            {editingCap ? (
+              <div className="flex items-center gap-2">
+                <input
+                  type="number"
+                  value={tempCap}
+                  onChange={(e) => setTempCap(e.target.value)}
+                  className="w-24 px-3 py-1 border-2 border-indigo-500 rounded-lg focus:outline-none"
+                  min="0"
+                />
+                <button
+                  onClick={updateTokenCap}
+                  className="bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-700 text-sm"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={() => {
+                    setEditingCap(false);
+                    setTempCap(tokenCap);
+                  }}
+                  className="bg-gray-600 text-white px-3 py-1 rounded-lg hover:bg-gray-700 text-sm"
+                >
+                  Cancel
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <p className="text-xl font-bold text-indigo-600">{tokenCap}</p>
+                <button
+                  onClick={() => setEditingCap(true)}
+                  className="text-indigo-600 hover:text-indigo-800 text-sm underline"
+                >
+                  Edit
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* Token Distribution Info */}
           <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 mb-6">
@@ -206,18 +350,11 @@ export default function TokenManager() {
               Add Shop
             </button>
             <button
-              onClick={loadData}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2"
-            >
-              <Upload size={20} />
-              Load
-            </button>
-            <button
               onClick={saveData}
               className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2"
             >
               <Save size={20} />
-              Export
+              Save as PDF
             </button>
           </div>
 
@@ -295,13 +432,13 @@ export default function TokenManager() {
           {/* Example Info */}
           <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
             <p className="text-sm text-gray-700 mb-2">
-              <strong>How it works:</strong> Manually assign tokens to each shop. The total cannot exceed 200 tokens. 
-              You can allocate them however you want - some shops can have more, others less, as long as the total stays within the cap.
+              <strong>How it works:</strong> Manually assign tokens to each shop. The total cannot exceed the token cap. 
+              You can allocate them however you want - some shops can have more, others less, as long as the total stays within the cap. 
+              <strong>✏️ Edit the token cap</strong> by clicking "Edit" next to the cap value above.
             </p>
             <p className="text-sm text-gray-700">
-              <strong>🗄️ Database:</strong> All data is stored in PostgreSQL database and accessible from anywhere! 
-              <strong>📤 Export:</strong> Download a backup JSON file. 
-              <strong>📥 Load:</strong> Import a previously saved JSON file.
+              <strong>🗄️ Auto-Save:</strong> All changes are automatically saved to PostgreSQL database and synced in real-time! 
+              <strong>📄 Save as PDF:</strong> Generate a printable PDF report of all shops and token allocations.
             </p>
           </div>
         </div>

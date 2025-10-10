@@ -28,7 +28,7 @@ pool.connect((err, client, release) => {
   console.log('✅ Connected to PostgreSQL');
   
   // Create shops table if it doesn't exist
-  const createTableQuery = `
+  const createShopsTableQuery = `
     CREATE TABLE IF NOT EXISTS shops (
       id BIGINT PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
@@ -38,13 +38,48 @@ pool.connect((err, client, release) => {
     );
   `;
   
-  client.query(createTableQuery, (err, result) => {
-    release();
+  // Create settings table for token cap
+  const createSettingsTableQuery = `
+    CREATE TABLE IF NOT EXISTS settings (
+      id SERIAL PRIMARY KEY,
+      key VARCHAR(255) UNIQUE NOT NULL,
+      value INTEGER NOT NULL,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+  `;
+  
+  // Insert default token cap if not exists
+  const insertDefaultCapQuery = `
+    INSERT INTO settings (key, value)
+    VALUES ('token_cap', 200)
+    ON CONFLICT (key) DO NOTHING;
+  `;
+  
+  client.query(createShopsTableQuery, (err, result) => {
     if (err) {
-      console.error('❌ Error creating table:', err.stack);
-    } else {
-      console.log('✅ Shops table ready');
+      console.error('❌ Error creating shops table:', err.stack);
+      release();
+      return;
     }
+    console.log('✅ Shops table ready');
+    
+    client.query(createSettingsTableQuery, (err, result) => {
+      if (err) {
+        console.error('❌ Error creating settings table:', err.stack);
+        release();
+        return;
+      }
+      console.log('✅ Settings table ready');
+      
+      client.query(insertDefaultCapQuery, (err, result) => {
+        release();
+        if (err) {
+          console.error('❌ Error inserting default cap:', err.stack);
+        } else {
+          console.log('✅ Default token cap set');
+        }
+      });
+    });
   });
 });
 
@@ -141,6 +176,35 @@ app.post('/api/shops/bulk', async (req, res) => {
     res.status(500).json({ error: 'Failed to bulk update shops', message: error.message });
   } finally {
     client.release();
+  }
+});
+
+// GET token cap setting
+app.get('/api/settings/token-cap', async (req, res) => {
+  try {
+    const result = await pool.query(
+      "SELECT value FROM settings WHERE key = 'token_cap'"
+    );
+    if (result.rows.length === 0) {
+      return res.json({ tokenCap: 200 });
+    }
+    res.json({ tokenCap: result.rows[0].value });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch token cap', message: error.message });
+  }
+});
+
+// PUT update token cap setting
+app.put('/api/settings/token-cap', async (req, res) => {
+  try {
+    const { tokenCap } = req.body;
+    const result = await pool.query(
+      "UPDATE settings SET value = $1, updated_at = CURRENT_TIMESTAMP WHERE key = 'token_cap' RETURNING value",
+      [tokenCap]
+    );
+    res.json({ tokenCap: result.rows[0].value });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update token cap', message: error.message });
   }
 });
 
