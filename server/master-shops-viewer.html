@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Shops Data Viewer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px 30px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .stat-card .number {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+    .stat-card .label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+    
+    .filters {
+      padding: 30px;
+      background: #f8f9fa;
+      border-bottom: 2px solid #e9ecef;
+    }
+    
+    .filter-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .filter-group {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .filter-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #495057;
+    }
+    
+    .filter-group select,
+    .filter-group input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #dee2e6;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    .filter-group select:focus,
+    .filter-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background: #5a6268;
+    }
+    
+    .table-container {
+      padding: 30px;
+      overflow-x: auto;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    
+    thead {
+      background: #f8f9fa;
+      position: sticky;
+      top: 0;
+    }
+    
+    th {
+      padding: 15px 10px;
+      text-align: left;
+      font-weight: 600;
+      color: #495057;
+      border-bottom: 2px solid #dee2e6;
+      white-space: nowrap;
+    }
+    
+    td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    tbody tr {
+      transition: background-color 0.2s;
+    }
+    
+    tbody tr:hover {
+      background-color: #f8f9fa;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 50px;
+      color: #6c757d;
+      font-size: 1.2rem;
+    }
+    
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 6px;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #e9ecef;
+      color: #495057;
+    }
+    
+    .badge.category-open {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+    
+    .badge.category-sc {
+      background: #fff3cd;
+      color: #856404;
+    }
+    
+    .badge.category-st {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    
+    .badge.category-goud {
+      background: #d4edda;
+      color: #155724;
+    }
+    
+    .result-count {
+      padding: 15px 30px;
+      background: #e7f3ff;
+      color: #004085;
+      font-weight: 600;
+      border-bottom: 1px solid #b8daff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🏪 Master Shops Data Viewer</h1>
+      <p>View all shops from districts-data.json</p>
+      
+      <div class="stats">
+        <div class="stat-card">
+          <div class="number" id="totalShops">-</div>
+          <div class="label">Total Shops</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="totalDistricts">-</div>
+          <div class="label">Districts</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="totalStations">-</div>
+          <div class="label">Excise Stations</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="totalCategories">-</div>
+          <div class="label">Categories</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="filters">
+      <div class="filter-row">
+        <div class="filter-group">
+          <label for="districtFilter">District</label>
+          <select id="districtFilter">
+            <option value="all">All Districts</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="stationFilter">Excise Station</label>
+          <select id="stationFilter">
+            <option value="all">All Stations</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="searchFilter">Search</label>
+          <input type="text" id="searchFilter" placeholder="Search by Gazette Code or Locality...">
+        </div>
+        
+        <div class="filter-group" style="display: flex; gap: 10px; align-items: flex-end;">
+          <button class="btn btn-primary" onclick="loadShops()">Apply Filters</button>
+          <button class="btn btn-secondary" onclick="resetFilters()">Reset</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="result-count" id="resultCount" style="display: none;">
+      Showing <span id="resultNumber">0</span> shops
+    </div>
+    
+    <div class="table-container">
+      <div id="loadingMessage" class="loading">Loading data...</div>
+      <div id="errorMessage" class="error" style="display: none;"></div>
+      
+      <table id="shopsTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Gazette Code</th>
+            <th>Locality</th>
+            <th>District</th>
+            <th>Excise Station</th>
+            <th>Annual Tax</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody id="shopsTableBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script>
+    const API_URL = 'http://localhost:3001';
+    
+    // Load statistics
+    async function loadStats() {
+      try {
+        const response = await fetch(`${API_URL}/api/master-shops/stats`);
+        const stats = await response.json();
+        
+        document.getElementById('totalShops').textContent = stats.total_shops || 0;
+        document.getElementById('totalDistricts').textContent = stats.total_districts || 0;
+        document.getElementById('totalStations').textContent = stats.total_stations || 0;
+        document.getElementById('totalCategories').textContent = stats.total_categories || 0;
+      } catch (error) {
+        console.error('Error loading stats:', error);
+      }
+    }
+    
+    // Load districts
+    async function loadDistricts() {
+      try {
+        const response = await fetch(`${API_URL}/api/districts`);
+        const districts = await response.json();
+        
+        const select = document.getElementById('districtFilter');
+        districts.forEach(district => {
+          const option = document.createElement('option');
+          option.value = district.name;
+          option.textContent = district.name;
+          select.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Error loading districts:', error);
+      }
+    }
+    
+    // Load stations based on district
+    async function loadStations(districtName = null) {
+      try {
+        let url = `${API_URL}/api/excise-stations`;
+        if (districtName && districtName !== 'all') {
+          url += `?district=${encodeURIComponent(districtName)}`;
+        }
+        
+        const response = await fetch(url);
+        const stations = await response.json();
+        
+        const select = document.getElementById('stationFilter');
+        select.innerHTML = '<option value="all">All Stations</option>';
+        
+        stations.forEach(station => {
+          const option = document.createElement('option');
+          option.value = station.name;
+          option.textContent = station.name;
+          select.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Error loading stations:', error);
+      }
+    }
+    
+    // Load categories
+    async function loadCategories() {
+      try {
+        const response = await fetch(`${API_URL}/api/categories`);
+        const categories = await response.json();
+        
+        const select = document.getElementById('categoryFilter');
+        categories.forEach(category => {
+          const option = document.createElement('option');
+          option.value = category;
+          option.textContent = category;
+          select.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Error loading categories:', error);
+      }
+    }
+    
+    // Load shops
+    async function loadShops() {
+      const district = document.getElementById('districtFilter').value;
+      const station = document.getElementById('stationFilter').value;
+      const category = document.getElementById('categoryFilter').value;
+      const search = document.getElementById('searchFilter').value;
+      
+      try {
+        document.getElementById('loadingMessage').style.display = 'block';
+        document.getElementById('shopsTable').style.display = 'none';
+        document.getElementById('errorMessage').style.display = 'none';
+        
+        let url = `${API_URL}/api/master-shops?`;
+        if (district !== 'all') url += `district=${encodeURIComponent(district)}&`;
+        if (station !== 'all') url += `station=${encodeURIComponent(station)}&`;
+        if (category !== 'all') url += `category=${encodeURIComponent(category)}&`;
+        if (search) url += `search=${encodeURIComponent(search)}&`;
+        
+        const response = await fetch(url);
+        const shops = await response.json();
+        
+        const tbody = document.getElementById('shopsTableBody');
+        tbody.innerHTML = '';
+        
+        if (shops.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px; color: #6c757d;">No shops found matching the filters</td></tr>';
+        } else {
+          shops.forEach(shop => {
+            const row = document.createElement('tr');
+            
+            let categoryClass = '';
+            const cat = shop.category ? shop.category.toLowerCase() : '';
+            if (cat.includes('open')) categoryClass = 'category-open';
+            else if (cat === 'sc') categoryClass = 'category-sc';
+            else if (cat === 'st') categoryClass = 'category-st';
+            else if (cat === 'goud') categoryClass = 'category-goud';
+            
+            row.innerHTML = `
+              <td><strong>${shop.gazette_code}</strong></td>
+              <td>${shop.locality}</td>
+              <td>${shop.district}</td>
+              <td>${shop.excise_station}</td>
+              <td>${shop.annual_excise_tax}</td>
+              <td><span class="badge ${categoryClass}">${shop.category || '-'}</span></td>
+            `;
+            tbody.appendChild(row);
+          });
+        }
+        
+        document.getElementById('resultCount').style.display = 'block';
+        document.getElementById('resultNumber').textContent = shops.length;
+        document.getElementById('loadingMessage').style.display = 'none';
+        document.getElementById('shopsTable').style.display = 'table';
+        
+      } catch (error) {
+        console.error('Error loading shops:', error);
+        document.getElementById('loadingMessage').style.display = 'none';
+        document.getElementById('errorMessage').style.display = 'block';
+        document.getElementById('errorMessage').textContent = `Error: ${error.message}. Make sure the server is running on ${API_URL}`;
+      }
+    }
+    
+    // Reset filters
+    function resetFilters() {
+      document.getElementById('districtFilter').value = 'all';
+      document.getElementById('stationFilter').value = 'all';
+      document.getElementById('categoryFilter').value = 'all';
+      document.getElementById('searchFilter').value = '';
+      loadStations();
+      loadShops();
+    }
+    
+    // District change handler
+    document.getElementById('districtFilter').addEventListener('change', function() {
+      loadStations(this.value);
+    });
+    
+    // Initialize
+    window.onload = async function() {
+      await loadStats();
+      await loadDistricts();
+      await loadStations();
+      await loadCategories();
+      await loadShops();
+    };
+  </script>
+</body>
+</html>
+

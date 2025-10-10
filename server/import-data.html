@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Districts & Excise Stations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #4F46E5;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #4F46E5;
+        }
+        button {
+            background: #4F46E5;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #4338CA;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        .message.success {
+            background: #D1FAE5;
+            color: #065F46;
+            border: 2px solid #10B981;
+            display: block;
+        }
+        .message.error {
+            background: #FEE2E2;
+            color: #991B1B;
+            border: 2px solid #EF4444;
+            display: block;
+        }
+        .example {
+            background: #F3F4F6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+        .info-box {
+            background: #EFF6FF;
+            border: 2px solid #3B82F6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #1E40AF;
+        }
+        input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            width: 100%;
+            max-width: 400px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #4F46E5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Import Districts & Excise Stations</h1>
+        <p class="subtitle">Easily import your district and excise station data</p>
+
+        <div class="info-box">
+            <h3>ℹ️ How to Use</h3>
+            <p>1. Enter your API URL (use http://localhost:5001 for local development)</p>
+            <p>2. Paste your JSON data in the format shown below</p>
+            <p>3. Click "Import Data" to upload to the database</p>
+        </div>
+
+        <div class="section">
+            <label for="apiUrl">API URL:</label>
+            <input type="text" id="apiUrl" value="http://localhost:5001" placeholder="http://localhost:5001">
+        </div>
+
+        <div class="section">
+            <label for="jsonData">JSON Data:</label>
+            <textarea id="jsonData" placeholder='Paste your JSON here...'></textarea>
+            
+            <div class="example">
+<strong>Example Format:</strong>
+[
+  {
+    "district": "Thiruvananthapuram",
+    "stations": ["Station A", "Station B", "Station C"]
+  },
+  {
+    "district": "Kollam",
+    "stations": ["Station X", "Station Y"]
+  },
+  {
+    "district": "Pathanamthitta",
+    "stations": ["Station P", "Station Q", "Station R"]
+  }
+]
+            </div>
+        </div>
+
+        <button onclick="importData()" id="importBtn">Import Data</button>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        async function importData() {
+            const apiUrl = document.getElementById('apiUrl').value.trim();
+            const jsonData = document.getElementById('jsonData').value.trim();
+            const messageDiv = document.getElementById('message');
+            const importBtn = document.getElementById('importBtn');
+
+            // Reset message
+            messageDiv.className = 'message';
+            messageDiv.textContent = '';
+
+            if (!apiUrl) {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '❌ Please enter an API URL';
+                return;
+            }
+
+            if (!jsonData) {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '❌ Please enter JSON data';
+                return;
+            }
+
+            try {
+                // Parse JSON
+                const data = JSON.parse(jsonData);
+                
+                if (!Array.isArray(data)) {
+                    throw new Error('Data must be an array');
+                }
+
+                // Validate structure
+                for (const item of data) {
+                    if (!item.district || !Array.isArray(item.stations)) {
+                        throw new Error('Each item must have "district" and "stations" array');
+                    }
+                }
+
+                // Disable button
+                importBtn.disabled = true;
+                importBtn.textContent = 'Importing...';
+
+                // Send to API
+                const response = await fetch(`${apiUrl}/api/districts/bulk`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ data })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Failed to import data');
+                }
+
+                const result = await response.json();
+                
+                messageDiv.className = 'message success';
+                messageDiv.innerHTML = `
+                    ✅ <strong>Success!</strong><br>
+                    ${result.message || 'Data imported successfully!'}<br>
+                    You can now close this page and refresh your Token Manager.
+                `;
+
+            } catch (error) {
+                messageDiv.className = 'message error';
+                messageDiv.innerHTML = `
+                    ❌ <strong>Error:</strong><br>
+                    ${error.message}
+                `;
+            } finally {
+                importBtn.disabled = false;
+                importBtn.textContent = 'Import Data';
+            }
+        }
+
+        // Allow Ctrl+Enter to submit
+        document.getElementById('jsonData').addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                importData();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

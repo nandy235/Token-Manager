@@ -9,12 +9,24 @@ const API_URL = import.meta.env.VITE_API_URL ||
 
 export default function TokenManager() {
   const [shops, setShops] = useState([]);
-  const [newShopName, setNewShopName] = useState('');
   const [saveMessage, setSaveMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const [tokenCap, setTokenCap] = useState(200);
   const [editingCap, setEditingCap] = useState(false);
   const [tempCap, setTempCap] = useState(200);
+  
+  // New state for districts and excise stations
+  const [districts, setDistricts] = useState([]);
+  const [exciseStations, setExciseStations] = useState([]);
+  const [selectedDistrict, setSelectedDistrict] = useState('all');
+  const [selectedStation, setSelectedStation] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [categories, setCategories] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [masterShops, setMasterShops] = useState([]);
+  const [pdfStationFilter, setPdfStationFilter] = useState('all');
+  const [pdfDistrictFilter, setPdfDistrictFilter] = useState('all');
+  const [pdfStations, setPdfStations] = useState([]);
   
   const totalTokensUsed = shops.reduce((sum, shop) => sum + shop.tokens, 0);
   const remainingTokens = tokenCap - totalTokensUsed;
@@ -23,11 +35,53 @@ export default function TokenManager() {
   useEffect(() => {
     fetchShops();
     fetchTokenCap();
+    fetchDistricts();
+    fetchCategories();
   }, []);
+  
+  // Fetch excise stations when district changes
+  useEffect(() => {
+    if (selectedDistrict && selectedDistrict !== 'all') {
+      fetchExciseStations(selectedDistrict);
+    } else {
+      setExciseStations([]);
+      setSelectedStation('all');
+    }
+  }, [selectedDistrict]);
+  
+  // Re-fetch shops when filter changes
+  useEffect(() => {
+    fetchShops();
+  }, [selectedDistrict, selectedStation]);
+  
+  // Fetch PDF stations when PDF district changes
+  useEffect(() => {
+    fetchPdfStations(pdfDistrictFilter);
+  }, [pdfDistrictFilter]);
+  
+  // Fetch master shops when filters change
+  useEffect(() => {
+    fetchMasterShops();
+  }, [selectedDistrict, selectedStation, selectedCategory, searchQuery]);
 
   const fetchShops = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/shops`);
+      let url = `${API_URL}/api/shops`;
+      const params = new URLSearchParams();
+      
+      if (selectedDistrict && selectedDistrict !== 'all') {
+        params.append('district', selectedDistrict);
+      }
+      
+      if (selectedStation && selectedStation !== 'all') {
+        params.append('station', selectedStation);
+      }
+      
+      if (params.toString()) {
+        url += `?${params.toString()}`;
+      }
+      
+      const response = await fetch(url);
       const data = await response.json();
       setShops(data);
       setLoading(false);
@@ -36,6 +90,84 @@ export default function TokenManager() {
       setSaveMessage('Error connecting to server!');
       setTimeout(() => setSaveMessage(''), 3000);
       setLoading(false);
+    }
+  };
+  
+  const fetchDistricts = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/districts`);
+      const data = await response.json();
+      setDistricts(data);
+    } catch (error) {
+      console.error('Failed to fetch districts:', error);
+    }
+  };
+  
+  const fetchExciseStations = async (districtName) => {
+    try {
+      const response = await fetch(`${API_URL}/api/excise-stations?district=${encodeURIComponent(districtName)}`);
+      const data = await response.json();
+      setExciseStations(data);
+    } catch (error) {
+      console.error('Failed to fetch excise stations:', error);
+    }
+  };
+  
+  const fetchPdfStations = async (districtName) => {
+    try {
+      if (districtName && districtName !== 'all') {
+        const response = await fetch(`${API_URL}/api/excise-stations?district=${encodeURIComponent(districtName)}`);
+        const data = await response.json();
+        setPdfStations(data);
+      } else {
+        setPdfStations([]);
+        setPdfStationFilter('all');
+      }
+    } catch (error) {
+      console.error('Failed to fetch PDF stations:', error);
+    }
+  };
+  
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/categories`);
+      const data = await response.json();
+      setCategories(data);
+    } catch (error) {
+      console.error('Failed to fetch categories:', error);
+    }
+  };
+  
+  const fetchMasterShops = async () => {
+    try {
+      let url = `${API_URL}/api/master-shops`;
+      const params = new URLSearchParams();
+      
+      if (selectedDistrict && selectedDistrict !== 'all') {
+        params.append('district', selectedDistrict);
+      }
+      
+      if (selectedStation && selectedStation !== 'all') {
+        params.append('station', selectedStation);
+      }
+      
+      if (selectedCategory && selectedCategory !== 'all') {
+        params.append('category', selectedCategory);
+      }
+      
+      if (searchQuery && searchQuery.trim()) {
+        params.append('search', searchQuery.trim());
+      }
+      
+      if (params.toString()) {
+        url += `?${params.toString()}`;
+      }
+      
+      const response = await fetch(url);
+      const data = await response.json();
+      setMasterShops(data);
+    } catch (error) {
+      console.error('Failed to fetch master shops:', error);
     }
   };
 
@@ -50,29 +182,53 @@ export default function TokenManager() {
     }
   };
 
-  const addShop = async () => {
-    if (newShopName.trim()) {
-      try {
-        const newShop = { 
-          id: Date.now(), 
-          name: newShopName.trim(), 
-          tokens: 0,
-          expected_tokens: 0,
-          avg_sale: ''
-        };
-        const response = await fetch(`${API_URL}/api/shops`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(newShop)
-        });
-        const data = await response.json();
-        setShops([...shops, data]);
-        setNewShopName('');
-      } catch (error) {
-        console.error('Failed to add shop:', error);
-        setSaveMessage('Error adding shop!');
+  const addShopFromMaster = async (masterShop) => {
+    try {
+      // Check if shop already exists
+      const shopId = parseInt(masterShop.gazette_code.replace(/\D/g, ''));
+      const existingShop = shops.find(s => s.id === shopId);
+      if (existingShop) {
+        setSaveMessage('Shop already added!');
         setTimeout(() => setSaveMessage(''), 3000);
+        return;
       }
+
+      const newShop = { 
+        id: shopId, 
+        name: masterShop.locality,
+        gazette_code: masterShop.gazette_code,
+        category: masterShop.category,
+        district: masterShop.district,
+        station: masterShop.excise_station,
+        tokens: 0,
+        expected_tokens: 0,
+        avg_sale: ''
+      };
+      
+      const response = await fetch(`${API_URL}/api/shops`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newShop)
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        // Update shops state immediately with the new shop
+        const addedShop = {
+          ...newShop,
+          ...data,
+          id: shopId // Ensure ID is correct
+        };
+        setShops([...shops, addedShop]);
+        setSaveMessage('Shop added successfully!');
+        setTimeout(() => setSaveMessage(''), 3000);
+      } else {
+        throw new Error('Failed to add shop');
+      }
+    } catch (error) {
+      console.error('Failed to add shop:', error);
+      setSaveMessage('Error adding shop!');
+      setTimeout(() => setSaveMessage(''), 3000);
     }
   };
 
@@ -153,12 +309,6 @@ export default function TokenManager() {
     }
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      addShop();
-    }
-  };
-
   const updateTokenCap = async () => {
     try {
       const newCap = parseInt(tempCap);
@@ -187,9 +337,164 @@ export default function TokenManager() {
     }
   };
 
-  const saveData = () => {
+  const downloadPDF = () => {
+    console.log('PDF download started');
     const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      alert('Please allow popups for this site to download PDF');
+      return;
+    }
     const currentDate = new Date().toLocaleDateString();
+    
+    console.log('PDF filters:', { pdfDistrictFilter, pdfStationFilter });
+    
+    // Filter shops based on PDF filters
+    let filteredShops = shops;
+    if (pdfDistrictFilter !== 'all') {
+      filteredShops = filteredShops.filter(shop => shop.district === pdfDistrictFilter);
+    }
+    if (pdfStationFilter !== 'all') {
+      filteredShops = filteredShops.filter(shop => shop.station === pdfStationFilter);
+    }
+    
+    console.log('Filtered shops:', filteredShops.length);
+    
+    // Determine report title based on filters
+    let reportTitle = 'Shop Token Manager Report';
+    if (pdfDistrictFilter !== 'all' && pdfStationFilter === 'all') {
+      reportTitle = `${pdfDistrictFilter.toUpperCase()} DISTRICT SUMMARY`;
+    } else if (pdfDistrictFilter !== 'all' && pdfStationFilter !== 'all') {
+      reportTitle = `${pdfDistrictFilter.toUpperCase()} DISTRICT - ${pdfStationFilter.toUpperCase()} STATION SUMMARY`;
+    } else if (pdfDistrictFilter === 'all' && pdfStationFilter !== 'all') {
+      reportTitle = `${pdfStationFilter.toUpperCase()} STATION SUMMARY`;
+    }
+    
+    // Group shops by district, then by station
+    let groupedShops = {};
+    filteredShops.forEach(shop => {
+      const district = shop.district || 'Unknown District';
+      if (!groupedShops[district]) groupedShops[district] = {};
+      const station = shop.station || 'Unknown Station';
+      if (!groupedShops[district][station]) groupedShops[district][station] = [];
+      groupedShops[district][station].push(shop);
+    });
+    
+    // Generate summary table with district rowspan
+    let summaryByDistrict = {};
+    Object.keys(groupedShops).sort().forEach(district => {
+      const stations = groupedShops[district];
+      summaryByDistrict[district] = [];
+      Object.keys(stations).sort().forEach(station => {
+        const stationShops = stations[station];
+        const tokens = stationShops.reduce((sum, shop) => sum + shop.tokens, 0);
+        summaryByDistrict[district].push({ station, tokens });
+      });
+    });
+    
+    // Generate table rows with rowspan
+    let summaryRows = '';
+    let serialNo = 1;
+    let grandTotal = 0;
+    
+    Object.keys(summaryByDistrict).sort().forEach(district => {
+      const stations = summaryByDistrict[district];
+      const districtRowspan = stations.length;
+      
+      stations.forEach((stationData, stationIndex) => {
+        grandTotal += stationData.tokens;
+        if (stationIndex === 0) {
+          // First row for this district - include district cell with rowspan
+          summaryRows += `
+            <tr>
+              <td>${serialNo++}</td>
+              <td rowspan="${districtRowspan}" style="vertical-align: middle; font-weight: bold; background-color: #EEF2FF;">${district}</td>
+              <td>${stationData.station}</td>
+              <td style="font-weight: bold; color: #4F46E5;">${stationData.tokens}</td>
+            </tr>
+          `;
+        } else {
+          // Subsequent rows - no district cell
+          summaryRows += `
+            <tr>
+              <td>${serialNo++}</td>
+              <td>${stationData.station}</td>
+              <td style="font-weight: bold; color: #4F46E5;">${stationData.tokens}</td>
+            </tr>
+          `;
+        }
+      });
+    });
+    
+    const summaryHtml = `
+      <div class="summary-section">
+        <h2 class="summary-title">📊 Token Allocation Summary</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>S. No</th>
+              <th>District</th>
+              <th>Station</th>
+              <th>No of Tokens</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${summaryRows}
+            <tr class="total-row">
+              <td colspan="3" style="text-align: right; font-weight: bold;">Grand Total:</td>
+              <td style="font-weight: bold; background-color: #C7D2FE;">${grandTotal}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+    
+    // Generate tables based on grouping
+    let tablesHtml = '';
+    let globalIndex = 1;
+    
+    Object.keys(groupedShops).sort().forEach(district => {
+      const stations = groupedShops[district];
+      
+      Object.keys(stations).sort().forEach(station => {
+        const stationShops = stations[station];
+        const stationTotal = stationShops.reduce((sum, shop) => sum + shop.tokens, 0);
+        
+        tablesHtml += `
+          <div class="station-section">
+            <div class="simple-header">
+              <span><strong>DISTRICT:</strong> ${district}</span>
+              <span><strong>STATION:</strong> ${station}</span>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>S. No</th>
+                  <th>Shop Name</th>
+                  <th>Avg Sale</th>
+                  <th>Expected Tokens</th>
+                  <th>Tokens</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${stationShops.map((shop) => `
+                  <tr>
+                    <td>${globalIndex++}</td>
+                    <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}${shop.category && shop.category.toUpperCase() !== 'OPEN' ? ` (${shop.category})` : ''}</td>
+                    <td>${shop.avg_sale || ''}</td>
+                    <td>${shop.expected_tokens || 0}</td>
+                    <td>${shop.tokens}</td>
+                  </tr>
+                `).join('')}
+                <tr class="subtotal-row">
+                  <td colspan="4" style="text-align: right; font-weight: bold;">${station} - Total:</td>
+                  <td style="font-weight: bold; background-color: #E0E7FF;">${stationTotal}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+      });
+    });
     
     const htmlContent = `
       <!DOCTYPE html>
@@ -200,52 +505,114 @@ export default function TokenManager() {
           body { 
             font-family: Arial, sans-serif; 
             padding: 40px;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
           }
           h1 { color: #4F46E5; margin-bottom: 10px; }
-          .info { color: #666; margin-bottom: 30px; }
-          table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin: 20px 0;
-          }
-          th, td { 
-            border: 1px solid #ddd; 
-            padding: 12px; 
-            text-align: left; 
-          }
-          th { 
-            background-color: #4F46E5; 
-            color: white;
-          }
-          tr:nth-child(even) { background-color: #f9f9f9; }
+          .info { color: #666; margin-bottom: 10px; }
           .summary { 
             background: #EEF2FF; 
             padding: 20px; 
             border-radius: 8px;
             margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
           }
-          .summary-item {
-            display: inline-block;
-            margin-right: 40px;
+          .summary-item { text-align: center; }
+          .summary-label { font-weight: bold; color: #666; font-size: 14px; }
+          .summary-value { font-size: 28px; font-weight: bold; color: #4F46E5; margin-top: 5px; }
+          
+          .district-section { margin: 40px 0; page-break-inside: avoid; }
+          .district-title {
+            color: #1E40AF;
+            background: #DBEAFE;
+            padding: 15px;
+            border-left: 5px solid #1E40AF;
+            margin: 30px 0 20px 0;
+            font-size: 20px;
           }
-          .summary-label { 
-            font-weight: bold; 
-            color: #666;
+          .station-section { margin: 25px 0; }
+          .station-title {
+            color: #7C3AED;
+            background: #F3E8FF;
+            padding: 12px;
+            border-left: 4px solid #7C3AED;
+            margin: 20px 0 10px 0;
+            font-size: 16px;
           }
-          .summary-value {
+          .section { margin: 30px 0; }
+          .section-title {
+            color: #7C3AED;
+            background: #F3E8FF;
+            padding: 12px;
+            border-left: 4px solid #7C3AED;
+            margin: 20px 0 10px 0;
+            font-size: 18px;
+          }
+          
+          .summary-section {
+            margin: 30px 0;
+            page-break-inside: avoid;
+            background: #F0FDF4;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #10B981;
+          }
+          .summary-title {
+            color: #065F46;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #10B981;
+          }
+          
+          .simple-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: #F3F4F6;
+            border: 1px solid #D1D5DB;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #374151;
+          }
+          .simple-header span {
+            margin-right: 30px;
+          }
+          
+          table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+          th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+          th { background-color: #4F46E5; color: white; font-size: 14px; }
+          tr:nth-child(even) { background-color: #f9f9f9; }
+          .subtotal-row td { background-color: #E0E7FF; border-top: 2px solid #6366F1; font-size: 15px; }
+          .total-row td { background-color: #C7D2FE; border-top: 2px solid #4F46E5; font-size: 15px; }
+          
+          .district-total {
+            background: #DBEAFE;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: right;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 2px solid #3B82F6;
+          }
+          .total-value {
+            color: #1E40AF;
             font-size: 24px;
             font-weight: bold;
-            color: #4F46E5;
+            margin-left: 15px;
           }
+          
           @media print {
             body { padding: 20px; }
+            .district-section { page-break-after: auto; }
+            .station-section { page-break-inside: avoid; }
           }
         </style>
       </head>
       <body>
-        <h1>Shop Token Manager</h1>
+        <h1>${reportTitle}</h1>
         <p class="info">Generated on: ${currentDate}</p>
         
         <div class="summary">
@@ -255,40 +622,21 @@ export default function TokenManager() {
           </div>
           <div class="summary-item">
             <div class="summary-label">Total Shops</div>
-            <div class="summary-value">${shops.length}</div>
+            <div class="summary-value">${filteredShops.length}</div>
           </div>
           <div class="summary-item">
-            <div class="summary-label">Tokens Used</div>
-            <div class="summary-value">${totalTokensUsed}</div>
+            <div class="summary-label">Tokens Allocated</div>
+            <div class="summary-value">${filteredShops.reduce((sum, shop) => sum + shop.tokens, 0)}</div>
           </div>
           <div class="summary-item">
             <div class="summary-label">Remaining</div>
-            <div class="summary-value">${remainingTokens}</div>
+            <div class="summary-value">${tokenCap - filteredShops.reduce((sum, shop) => sum + shop.tokens, 0)}</div>
           </div>
         </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>S. No</th>
-              <th>Shop Name</th>
-              <th>Expected Tokens</th>
-              <th>Avg Sale</th>
-              <th>Tokens Allocated</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${shops.map((shop, index) => `
-              <tr>
-                <td>${index + 1}</td>
-                <td>${shop.name}</td>
-                <td>${shop.expected_tokens || 0}</td>
-                <td>${shop.avg_sale || ''}</td>
-                <td>${shop.tokens}</td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
+        ${summaryHtml}
+
+        ${tablesHtml}
 
         <script>
           window.onload = function() {
@@ -302,6 +650,7 @@ export default function TokenManager() {
     printWindow.document.write(htmlContent);
     printWindow.document.close();
     
+    console.log('PDF content written to window');
     setSaveMessage('Print dialog opened! Choose "Save as PDF" in the print dialog.');
     setTimeout(() => setSaveMessage(''), 5000);
   };
@@ -380,30 +729,184 @@ export default function TokenManager() {
             </div>
           )}
 
-          {/* Add Shop Input */}
-          <div className="flex gap-2 mb-6">
-            <input
-              type="text"
-              value={newShopName}
-              onChange={(e) => setNewShopName(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="Enter shop name"
-              className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-            />
-            <button
-              onClick={addShop}
-              className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition flex items-center gap-2"
-            >
-              <Plus size={20} />
-              Add Shop
-            </button>
-            <button
-              onClick={saveData}
-              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2"
-            >
-              <Save size={20} />
-              Save as PDF
-            </button>
+          {/* Filter Section */}
+          <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-4 mb-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-3">🔍 Search & Filter Shops</h3>
+            
+            {/* Search Bar */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Search by Name or Gazette Code</label>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Type to search..."
+                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-purple-500"
+              />
+            </div>
+            
+            {/* Filter Dropdowns */}
+            <div className="flex gap-4 flex-wrap">
+              <div className="flex-1 min-w-[180px]">
+                <label className="block text-sm font-medium text-gray-700 mb-1">District</label>
+                <select
+                  value={selectedDistrict}
+                  onChange={(e) => setSelectedDistrict(e.target.value)}
+                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-purple-500"
+                >
+                  <option value="all">All Districts</option>
+                  {districts.map(district => (
+                    <option key={district.name} value={district.name}>{district.name}</option>
+                  ))}
+                </select>
+              </div>
+              
+              <div className="flex-1 min-w-[180px]">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Excise Station</label>
+                <select
+                  value={selectedStation}
+                  onChange={(e) => setSelectedStation(e.target.value)}
+                  disabled={selectedDistrict === 'all'}
+                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                >
+                  <option value="all">All Stations</option>
+                  {exciseStations.map(station => (
+                    <option key={station.name} value={station.name}>{station.name}</option>
+                  ))}
+                </select>
+              </div>
+              
+              <div className="flex-1 min-w-[180px]">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-purple-500"
+                >
+                  <option value="all">All Categories</option>
+                  {categories.map(category => (
+                    <option key={category} value={category}>{category}</option>
+                  ))}
+                </select>
+              </div>
+              
+              {(selectedDistrict !== 'all' || selectedStation !== 'all' || selectedCategory !== 'all' || searchQuery) && (
+                <div className="flex items-end">
+                  <button
+                    onClick={() => {
+                      setSelectedDistrict('all');
+                      setSelectedStation('all');
+                      setSelectedCategory('all');
+                      setSearchQuery('');
+                    }}
+                    className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+                  >
+                    Clear All
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Master Shops List - Select Shops to Add */}
+          <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6">
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-lg font-semibold text-gray-800">📋 Available Shops ({masterShops.length})</h3>
+              <div className="flex items-center gap-3">
+                <select
+                  value={pdfDistrictFilter}
+                  onChange={(e) => setPdfDistrictFilter(e.target.value)}
+                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-sm"
+                >
+                  <option value="all">All Districts</option>
+                  {districts.map(district => (
+                    <option key={district.name} value={district.name}>{district.name}</option>
+                  ))}
+                </select>
+                <select
+                  value={pdfStationFilter}
+                  onChange={(e) => setPdfStationFilter(e.target.value)}
+                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-sm"
+                  disabled={pdfDistrictFilter === 'all'}
+                >
+                  <option value="all">All Stations</option>
+                  {pdfStations.map(station => (
+                    <option key={station.name} value={station.name}>{station.name}</option>
+                  ))}
+                </select>
+                <button
+                  onClick={downloadPDF}
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2 text-sm font-semibold"
+                  title="Download PDF Report"
+                >
+                  <Save size={18} />
+                  Download PDF
+                </button>
+              </div>
+            </div>
+            
+            <div className="bg-white border-2 border-gray-200 rounded-lg overflow-x-auto max-h-96 overflow-y-auto">
+              <table className="w-full">
+                <thead className="bg-gray-100 sticky top-0">
+                  <tr>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Gazette Code</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Shop Name</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">District</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Station</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Category</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Annual Tax</th>
+                    <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {masterShops.length === 0 ? (
+                    <tr>
+                      <td colSpan="7" className="px-6 py-8 text-center text-gray-500">
+                        No shops found. Try adjusting your filters.
+                      </td>
+                    </tr>
+                  ) : (
+                    masterShops.map((shop) => {
+                      const shopId = parseInt(shop.gazette_code.replace(/\D/g, ''));
+                      const isSelected = shops.some(s => 
+                        s.id === shopId || 
+                        s.gazette_code === shop.gazette_code ||
+                        s.name === shop.locality
+                      );
+                      
+                      return (
+                        <tr key={`${shop.gazette_code}-${isSelected}`} className="border-t border-gray-200 hover:bg-gray-50">
+                          <td className="px-4 py-3 text-gray-800 font-medium text-sm">{shop.gazette_code}</td>
+                          <td className="px-4 py-3 text-gray-800">{shop.locality}</td>
+                          <td className="px-4 py-3 text-gray-600 text-sm">{shop.district}</td>
+                          <td className="px-4 py-3 text-gray-600 text-sm">{shop.excise_station}</td>
+                          <td className="px-4 py-3 text-sm">
+                            <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
+                              {shop.category}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3 text-gray-600 text-sm">{shop.annual_excise_tax}</td>
+                          <td className="px-4 py-3 text-center">
+                            <button
+                              onClick={() => addShopFromMaster(shop)}
+                              disabled={isSelected}
+                              className={`px-4 py-1 rounded-lg transition flex items-center gap-1 mx-auto text-sm ${
+                                isSelected 
+                                  ? 'bg-gray-200 text-gray-600 cursor-not-allowed' 
+                                  : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                              }`}
+                            >
+                              <Plus size={16} />
+                              {isSelected ? 'Selected' : 'Select'}
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           {/* Save Message */}
@@ -413,15 +916,19 @@ export default function TokenManager() {
             </div>
           )}
 
-          {/* Shop List Table */}
+          {/* Selected Shops - Token Allocation */}
+          <div className="mb-4">
+            <h3 className="text-lg font-semibold text-gray-800">✅ Selected Shops for Token Allocation ({shops.length})</h3>
+          </div>
+          
           <div className="bg-white border-2 border-gray-200 rounded-lg overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-100">
                 <tr>
                   <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">S. No</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Shop Name</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Expected Tokens</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Avg Sale</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Expected Tokens</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tokens</th>
                   <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
                 </tr>
@@ -430,22 +937,17 @@ export default function TokenManager() {
                 {shops.length === 0 ? (
                   <tr>
                     <td colSpan="6" className="px-6 py-8 text-center text-gray-500">
-                      No shops added yet. Add your first shop above!
+                      No shops selected yet. Search and select shops from the list above to allocate tokens.
                     </td>
                   </tr>
                 ) : (
                   shops.map((shop, index) => (
                     <tr key={shop.id} className="border-t border-gray-200 hover:bg-gray-50">
                       <td className="px-4 py-4 text-gray-800">{index + 1}</td>
-                      <td className="px-6 py-4 text-gray-800 font-medium">{shop.name}</td>
-                      <td className="px-6 py-4">
-                        <input
-                          type="text"
-                          value={shop.expected_tokens === 0 ? '' : shop.expected_tokens}
-                          onChange={(e) => updateExpectedTokens(shop.id, e.target.value)}
-                          placeholder="0"
-                          className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
-                        />
+                      <td className="px-6 py-4 text-gray-800 font-medium">
+                        {shop.gazette_code && `${shop.gazette_code} - `}
+                        {shop.name}
+                        {shop.category && shop.category.toUpperCase() !== 'OPEN' && ` (${shop.category})`}
                       </td>
                       <td className="px-6 py-4">
                         <input
@@ -454,6 +956,15 @@ export default function TokenManager() {
                           onChange={(e) => updateAvgSale(shop.id, e.target.value)}
                           placeholder="e.g. 3.5L"
                           className="w-28 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <input
+                          type="text"
+                          value={shop.expected_tokens === 0 ? '' : shop.expected_tokens}
+                          onChange={(e) => updateExpectedTokens(shop.id, e.target.value)}
+                          placeholder="0"
+                          className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
                         />
                       </td>
                       <td className="px-6 py-4">
