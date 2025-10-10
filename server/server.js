@@ -14,9 +14,10 @@ app.use(express.json());
 
 // PostgreSQL Connection
 const { Pool } = pg;
+const isDevelopment = process.env.NODE_ENV !== 'production';
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL || 'postgresql://localhost:5432/token_manager',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+  ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
 });
 
 // Test connection and create table

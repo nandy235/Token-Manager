@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, AlertCircle, Save, Upload } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+// Auto-detect environment
+const API_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.DEV 
+    ? 'http://localhost:5001' 
+    : 'https://token-manager-production.up.railway.app');
 
 export default function TokenManager() {
   const [shops, setShops] = useState([]);
