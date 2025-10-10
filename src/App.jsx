@@ -274,9 +274,9 @@ export default function TokenManager() {
             <tr>
               <th>S. No</th>
               <th>Shop Name</th>
-              <th>Tokens Allocated</th>
               <th>Expected Tokens</th>
               <th>Avg Sale</th>
+              <th>Tokens Allocated</th>
             </tr>
           </thead>
           <tbody>
@@ -284,9 +284,9 @@ export default function TokenManager() {
               <tr>
                 <td>${index + 1}</td>
                 <td>${shop.name}</td>
-                <td>${shop.tokens}</td>
                 <td>${shop.expected_tokens || 0}</td>
                 <td>${shop.avg_sale || 0}</td>
+                <td>${shop.tokens}</td>
               </tr>
             `).join('')}
           </tbody>
@@ -422,9 +422,9 @@ export default function TokenManager() {
                 <tr>
                   <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">S. No</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Shop Name</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tokens</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Expected Tokens</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Avg Sale</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tokens</th>
                   <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
                 </tr>
               </thead>
@@ -443,15 +443,6 @@ export default function TokenManager() {
                       <td className="px-6 py-4">
                         <input
                           type="text"
-                          value={shop.tokens === 0 ? '' : shop.tokens}
-                          onChange={(e) => updateTokens(shop.id, e.target.value)}
-                          placeholder="0"
-                          className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                        />
-                      </td>
-                      <td className="px-6 py-4">
-                        <input
-                          type="text"
                           value={shop.expected_tokens === 0 ? '' : shop.expected_tokens}
                           onChange={(e) => updateExpectedTokens(shop.id, e.target.value)}
                           placeholder="0"
@@ -465,6 +456,15 @@ export default function TokenManager() {
                           onChange={(e) => updateAvgSale(shop.id, e.target.value)}
                           placeholder="0.00"
                           className="w-28 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <input
+                          type="text"
+                          value={shop.tokens === 0 ? '' : shop.tokens}
+                          onChange={(e) => updateTokens(shop.id, e.target.value)}
+                          placeholder="0"
+                          className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
                         />
                       </td>
                       <td className="px-4 py-4">

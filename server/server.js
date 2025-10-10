@@ -32,9 +32,9 @@ pool.connect((err, client, release) => {
     CREATE TABLE IF NOT EXISTS shops (
       id BIGINT PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
-      tokens INTEGER DEFAULT 0,
       expected_tokens INTEGER DEFAULT 0,
       avg_sale DECIMAL(10, 2) DEFAULT 0,
+      tokens INTEGER DEFAULT 0,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
@@ -124,10 +124,10 @@ app.get('/api/shops', async (req, res) => {
 // POST create new shop
 app.post('/api/shops', async (req, res) => {
   try {
-    const { id, name, tokens, expected_tokens, avg_sale } = req.body;
+    const { id, name, expected_tokens, avg_sale, tokens } = req.body;
     const result = await pool.query(
-      'INSERT INTO shops (id, name, tokens, expected_tokens, avg_sale) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-      [id, name, tokens || 0, expected_tokens || 0, avg_sale || 0]
+      'INSERT INTO shops (id, name, expected_tokens, avg_sale, tokens) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [id, name, expected_tokens || 0, avg_sale || 0, tokens || 0]
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
@@ -139,17 +139,13 @@ app.post('/api/shops', async (req, res) => {
 app.put('/api/shops/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { tokens, expected_tokens, avg_sale } = req.body;
+    const { expected_tokens, avg_sale, tokens } = req.body;
     
     // Build dynamic update query
     const updates = [];
     const values = [];
     let paramCount = 1;
     
-    if (tokens !== undefined) {
-      updates.push(`tokens = $${paramCount++}`);
-      values.push(tokens);
-    }
     if (expected_tokens !== undefined) {
       updates.push(`expected_tokens = $${paramCount++}`);
       values.push(expected_tokens);
@@ -157,6 +153,10 @@ app.put('/api/shops/:id', async (req, res) => {
     if (avg_sale !== undefined) {
       updates.push(`avg_sale = $${paramCount++}`);
       values.push(avg_sale);
+    }
+    if (tokens !== undefined) {
+      updates.push(`tokens = $${paramCount++}`);
+      values.push(tokens);
     }
     
     updates.push(`updated_at = CURRENT_TIMESTAMP`);
@@ -207,8 +207,8 @@ app.post('/api/shops/bulk', async (req, res) => {
     // Insert new shops
     const insertPromises = shops.map(shop => 
       client.query(
-        'INSERT INTO shops (id, name, tokens, expected_tokens, avg_sale) VALUES ($1, $2, $3, $4, $5)',
-        [shop.id, shop.name, shop.tokens || 0, shop.expected_tokens || 0, shop.avg_sale || 0]
+        'INSERT INTO shops (id, name, expected_tokens, avg_sale, tokens) VALUES ($1, $2, $3, $4, $5)',
+        [shop.id, shop.name, shop.expected_tokens || 0, shop.avg_sale || 0, shop.tokens || 0]
       )
     );
     
