@@ -33,9 +33,24 @@ pool.connect((err, client, release) => {
       id BIGINT PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       tokens INTEGER DEFAULT 0,
+      expected_tokens INTEGER DEFAULT 0,
+      avg_sale DECIMAL(10, 2) DEFAULT 0,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
+  `;
+  
+  // Add new columns if they don't exist (for existing databases)
+  const addColumnsQuery = `
+    DO $$ 
+    BEGIN
+      IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='shops' AND column_name='expected_tokens') THEN
+        ALTER TABLE shops ADD COLUMN expected_tokens INTEGER DEFAULT 0;
+      END IF;
+      IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='shops' AND column_name='avg_sale') THEN
+        ALTER TABLE shops ADD COLUMN avg_sale DECIMAL(10, 2) DEFAULT 0;
+      END IF;
+    END $$;
   `;
   
   // Create settings table for token cap
@@ -63,21 +78,30 @@ pool.connect((err, client, release) => {
     }
     console.log('✅ Shops table ready');
     
-    client.query(createSettingsTableQuery, (err, result) => {
+    // Add new columns for existing tables
+    client.query(addColumnsQuery, (err, result) => {
       if (err) {
-        console.error('❌ Error creating settings table:', err.stack);
-        release();
-        return;
+        console.error('❌ Error adding new columns:', err.stack);
+      } else {
+        console.log('✅ New columns added');
       }
-      console.log('✅ Settings table ready');
       
-      client.query(insertDefaultCapQuery, (err, result) => {
-        release();
+      client.query(createSettingsTableQuery, (err, result) => {
         if (err) {
-          console.error('❌ Error inserting default cap:', err.stack);
-        } else {
-          console.log('✅ Default token cap set');
+          console.error('❌ Error creating settings table:', err.stack);
+          release();
+          return;
         }
+        console.log('✅ Settings table ready');
+        
+        client.query(insertDefaultCapQuery, (err, result) => {
+          release();
+          if (err) {
+            console.error('❌ Error inserting default cap:', err.stack);
+          } else {
+            console.log('✅ Default token cap set');
+          }
+        });
       });
     });
   });
@@ -100,10 +124,10 @@ app.get('/api/shops', async (req, res) => {
 // POST create new shop
 app.post('/api/shops', async (req, res) => {
   try {
-    const { id, name, tokens } = req.body;
+    const { id, name, tokens, expected_tokens, avg_sale } = req.body;
     const result = await pool.query(
-      'INSERT INTO shops (id, name, tokens) VALUES ($1, $2, $3) RETURNING *',
-      [id, name, tokens || 0]
+      'INSERT INTO shops (id, name, tokens, expected_tokens, avg_sale) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [id, name, tokens || 0, expected_tokens || 0, avg_sale || 0]
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
@@ -111,15 +135,38 @@ app.post('/api/shops', async (req, res) => {
   }
 });
 
-// PUT update shop tokens
+// PUT update shop
 app.put('/api/shops/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { tokens } = req.body;
+    const { tokens, expected_tokens, avg_sale } = req.body;
+    
+    // Build dynamic update query
+    const updates = [];
+    const values = [];
+    let paramCount = 1;
+    
+    if (tokens !== undefined) {
+      updates.push(`tokens = $${paramCount++}`);
+      values.push(tokens);
+    }
+    if (expected_tokens !== undefined) {
+      updates.push(`expected_tokens = $${paramCount++}`);
+      values.push(expected_tokens);
+    }
+    if (avg_sale !== undefined) {
+      updates.push(`avg_sale = $${paramCount++}`);
+      values.push(avg_sale);
+    }
+    
+    updates.push(`updated_at = CURRENT_TIMESTAMP`);
+    values.push(parseInt(id));
+    
     const result = await pool.query(
-      'UPDATE shops SET tokens = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 RETURNING *',
-      [tokens, parseInt(id)]
+      `UPDATE shops SET ${updates.join(', ')} WHERE id = $${paramCount} RETURNING *`,
+      values
     );
+    
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Shop not found' });
     }
@@ -160,8 +207,8 @@ app.post('/api/shops/bulk', async (req, res) => {
     // Insert new shops
     const insertPromises = shops.map(shop => 
       client.query(
-        'INSERT INTO shops (id, name, tokens) VALUES ($1, $2, $3)',
-        [shop.id, shop.name, shop.tokens || 0]
+        'INSERT INTO shops (id, name, tokens, expected_tokens, avg_sale) VALUES ($1, $2, $3, $4, $5)',
+        [shop.id, shop.name, shop.tokens || 0, shop.expected_tokens || 0, shop.avg_sale || 0]
       )
     );
     

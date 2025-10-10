@@ -53,7 +53,13 @@ export default function TokenManager() {
   const addShop = async () => {
     if (newShopName.trim()) {
       try {
-        const newShop = { id: Date.now(), name: newShopName.trim(), tokens: 0 };
+        const newShop = { 
+          id: Date.now(), 
+          name: newShopName.trim(), 
+          tokens: 0,
+          expected_tokens: 0,
+          avg_sale: 0
+        };
         const response = await fetch(`${API_URL}/api/shops`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -105,6 +111,46 @@ export default function TokenManager() {
     } catch (error) {
       console.error('Failed to update tokens:', error);
       setSaveMessage('Error updating tokens!');
+      setTimeout(() => setSaveMessage(''), 3000);
+    }
+  };
+
+  const updateExpectedTokens = async (id, value) => {
+    const numValue = parseInt(value) || 0;
+    
+    try {
+      await fetch(`${API_URL}/api/shops/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ expected_tokens: numValue })
+      });
+      
+      setShops(shops.map(s => 
+        s.id === id ? { ...s, expected_tokens: numValue } : s
+      ));
+    } catch (error) {
+      console.error('Failed to update expected tokens:', error);
+      setSaveMessage('Error updating expected tokens!');
+      setTimeout(() => setSaveMessage(''), 3000);
+    }
+  };
+
+  const updateAvgSale = async (id, value) => {
+    const numValue = parseFloat(value) || 0;
+    
+    try {
+      await fetch(`${API_URL}/api/shops/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ avg_sale: numValue })
+      });
+      
+      setShops(shops.map(s => 
+        s.id === id ? { ...s, avg_sale: numValue } : s
+      ));
+    } catch (error) {
+      console.error('Failed to update avg sale:', error);
+      setSaveMessage('Error updating avg sale!');
       setTimeout(() => setSaveMessage(''), 3000);
     }
   };
@@ -229,6 +275,8 @@ export default function TokenManager() {
               <th>S. No</th>
               <th>Shop Name</th>
               <th>Tokens Allocated</th>
+              <th>Expected Tokens</th>
+              <th>Avg Sale</th>
             </tr>
           </thead>
           <tbody>
@@ -237,6 +285,8 @@ export default function TokenManager() {
                 <td>${index + 1}</td>
                 <td>${shop.name}</td>
                 <td>${shop.tokens}</td>
+                <td>${shop.expected_tokens || 0}</td>
+                <td>${shop.avg_sale || 0}</td>
               </tr>
             `).join('')}
           </tbody>
@@ -366,48 +416,58 @@ export default function TokenManager() {
           )}
 
           {/* Shop List Table */}
-          <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
+          <div className="bg-white border-2 border-gray-200 rounded-lg overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">S. No</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">S. No</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Shop Name</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tokens</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Expected Tokens</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Avg Sale</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {shops.length === 0 ? (
                   <tr>
-                    <td colSpan="4" className="px-6 py-8 text-center text-gray-500">
+                    <td colSpan="6" className="px-6 py-8 text-center text-gray-500">
                       No shops added yet. Add your first shop above!
                     </td>
                   </tr>
                 ) : (
                   shops.map((shop, index) => (
                     <tr key={shop.id} className="border-t border-gray-200 hover:bg-gray-50">
-                      <td className="px-6 py-4 text-gray-800">{index + 1}</td>
+                      <td className="px-4 py-4 text-gray-800">{index + 1}</td>
                       <td className="px-6 py-4 text-gray-800 font-medium">{shop.name}</td>
                       <td className="px-6 py-4">
                         <input
                           type="text"
                           value={shop.tokens === 0 ? '' : shop.tokens}
                           onChange={(e) => updateTokens(shop.id, e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                              e.preventDefault();
-                              const inputs = document.querySelectorAll('input[type="text"][placeholder="0"]');
-                              const currentIndex = Array.from(inputs).indexOf(e.target);
-                              if (currentIndex < inputs.length - 1) {
-                                inputs[currentIndex + 1].focus();
-                              }
-                            }
-                          }}
                           placeholder="0"
                           className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
                         />
                       </td>
                       <td className="px-6 py-4">
+                        <input
+                          type="text"
+                          value={shop.expected_tokens === 0 ? '' : shop.expected_tokens}
+                          onChange={(e) => updateExpectedTokens(shop.id, e.target.value)}
+                          placeholder="0"
+                          className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <input
+                          type="text"
+                          value={shop.avg_sale === 0 ? '' : shop.avg_sale}
+                          onChange={(e) => updateAvgSale(shop.id, e.target.value)}
+                          placeholder="0.00"
+                          className="w-28 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                        />
+                      </td>
+                      <td className="px-4 py-4">
                         <button
                           onClick={() => removeShop(shop.id)}
                           className="text-red-600 hover:text-red-800 transition"
