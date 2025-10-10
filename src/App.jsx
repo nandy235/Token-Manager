@@ -1006,7 +1006,6 @@ export default function TokenManager() {
               <strong>✏️ Edit the token cap</strong> by clicking "Edit" next to the cap value above.
             </p>
             <p className="text-sm text-gray-700">
-              <strong>🗄️ Auto-Save:</strong> All changes are automatically saved to PostgreSQL database and synced in real-time! 
               <strong>📄 Save as PDF:</strong> Generate a printable PDF report of all shops and token allocations.
             </p>
           </div>
