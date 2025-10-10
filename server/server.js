@@ -33,7 +33,7 @@ pool.connect((err, client, release) => {
       id BIGINT PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       expected_tokens INTEGER DEFAULT 0,
-      avg_sale DECIMAL(10, 2) DEFAULT 0,
+      avg_sale VARCHAR(50) DEFAULT '',
       tokens INTEGER DEFAULT 0,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -48,7 +48,7 @@ pool.connect((err, client, release) => {
         ALTER TABLE shops ADD COLUMN expected_tokens INTEGER DEFAULT 0;
       END IF;
       IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='shops' AND column_name='avg_sale') THEN
-        ALTER TABLE shops ADD COLUMN avg_sale DECIMAL(10, 2) DEFAULT 0;
+        ALTER TABLE shops ADD COLUMN avg_sale VARCHAR(50) DEFAULT '';
       END IF;
     END $$;
   `;
@@ -127,7 +127,7 @@ app.post('/api/shops', async (req, res) => {
     const { id, name, expected_tokens, avg_sale, tokens } = req.body;
     const result = await pool.query(
       'INSERT INTO shops (id, name, expected_tokens, avg_sale, tokens) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-      [id, name, expected_tokens || 0, avg_sale || 0, tokens || 0]
+      [id, name, expected_tokens || 0, avg_sale || '', tokens || 0]
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
@@ -208,7 +208,7 @@ app.post('/api/shops/bulk', async (req, res) => {
     const insertPromises = shops.map(shop => 
       client.query(
         'INSERT INTO shops (id, name, expected_tokens, avg_sale, tokens) VALUES ($1, $2, $3, $4, $5)',
-        [shop.id, shop.name, shop.expected_tokens || 0, shop.avg_sale || 0, shop.tokens || 0]
+        [shop.id, shop.name, shop.expected_tokens || 0, shop.avg_sale || '', shop.tokens || 0]
       )
     );
     

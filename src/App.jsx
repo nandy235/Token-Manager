@@ -58,7 +58,7 @@ export default function TokenManager() {
           name: newShopName.trim(), 
           tokens: 0,
           expected_tokens: 0,
-          avg_sale: 0
+          avg_sale: ''
         };
         const response = await fetch(`${API_URL}/api/shops`, {
           method: 'POST',
@@ -136,17 +136,15 @@ export default function TokenManager() {
   };
 
   const updateAvgSale = async (id, value) => {
-    const numValue = parseFloat(value) || 0;
-    
     try {
       await fetch(`${API_URL}/api/shops/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ avg_sale: numValue })
+        body: JSON.stringify({ avg_sale: value })
       });
       
       setShops(shops.map(s => 
-        s.id === id ? { ...s, avg_sale: numValue } : s
+        s.id === id ? { ...s, avg_sale: value } : s
       ));
     } catch (error) {
       console.error('Failed to update avg sale:', error);
@@ -285,7 +283,7 @@ export default function TokenManager() {
                 <td>${index + 1}</td>
                 <td>${shop.name}</td>
                 <td>${shop.expected_tokens || 0}</td>
-                <td>${shop.avg_sale || 0}</td>
+                <td>${shop.avg_sale || ''}</td>
                 <td>${shop.tokens}</td>
               </tr>
             `).join('')}
@@ -452,9 +450,9 @@ export default function TokenManager() {
                       <td className="px-6 py-4">
                         <input
                           type="text"
-                          value={shop.avg_sale === 0 ? '' : shop.avg_sale}
+                          value={shop.avg_sale || ''}
                           onChange={(e) => updateAvgSale(shop.id, e.target.value)}
-                          placeholder="0.00"
+                          placeholder="e.g. 3.5L"
                           className="w-28 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                         />
                       </td>
