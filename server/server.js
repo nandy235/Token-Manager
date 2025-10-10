@@ -49,6 +49,10 @@ pool.connect((err, client, release) => {
       END IF;
       IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='shops' AND column_name='avg_sale') THEN
         ALTER TABLE shops ADD COLUMN avg_sale VARCHAR(50) DEFAULT '';
+      ELSE
+        -- Change avg_sale from DECIMAL to VARCHAR if it exists
+        ALTER TABLE shops ALTER COLUMN avg_sale TYPE VARCHAR(50);
+        ALTER TABLE shops ALTER COLUMN avg_sale SET DEFAULT '';
       END IF;
     END $$;
   `;
