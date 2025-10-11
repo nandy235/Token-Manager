@@ -1048,8 +1048,8 @@ export default function TokenManager() {
             )}
           </div>
 
-          {/* Token Distribution Info - Only show when no PDF filters are applied */}
-          {(pdfDistrictFilter === 'all' && pdfStationFilter === 'all') && (
+          {/* Token Distribution Info - Always show total across all shops */}
+          {mode === 'planning' && (
             <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 mb-6">
               <div className="flex justify-between items-center">
                 <div>
@@ -1069,9 +1069,64 @@ export default function TokenManager() {
               </div>
             </div>
           )}
+          
+          {/* Real Mode Token Distribution - Always show total across all shops */}
+          {mode === 'real' && (
+            <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 mb-6">
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-sm text-gray-600">Total Shops</p>
+                  <p className="text-2xl font-bold text-indigo-600">{realShops.length}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">Tokens Allocated</p>
+                  <p className="text-2xl font-bold text-indigo-600">
+                    {realShops.reduce((sum, shop) => {
+                      const allocatedTokens = shop.allocated_tokens || '';
+                      const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+                      return sum + count;
+                    }, 0)}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">Remaining</p>
+                  <p className={`text-2xl font-bold ${(() => {
+                    const allocated = realShops.reduce((sum, shop) => {
+                      const allocatedTokens = shop.allocated_tokens || '';
+                      const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+                      return sum + count;
+                    }, 0);
+                    return tokenCap - allocated === 0 ? 'text-red-600' : 'text-green-600';
+                  })()}`}>
+                    {(() => {
+                      const allocated = realShops.reduce((sum, shop) => {
+                        const allocatedTokens = shop.allocated_tokens || '';
+                        const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+                        return sum + count;
+                      }, 0);
+                      return tokenCap - allocated;
+                    })()}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
-          {/* Warning when at cap - Only show when no PDF filters are applied */}
-          {remainingTokens === 0 && (pdfDistrictFilter === 'all' && pdfStationFilter === 'all') && (
+          {/* Warning when at cap */}
+          {mode === 'planning' && remainingTokens === 0 && (
+            <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-6 flex items-center gap-3">
+              <AlertCircle className="text-red-600" size={24} />
+              <p className="text-red-800 font-medium">Token limit reached! Remove tokens from other shops to allocate more.</p>
+            </div>
+          )}
+          {mode === 'real' && (() => {
+            const allocated = realShops.reduce((sum, shop) => {
+              const allocatedTokens = shop.allocated_tokens || '';
+              const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+              return sum + count;
+            }, 0);
+            return tokenCap - allocated === 0;
+          })() && (
             <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-6 flex items-center gap-3">
               <AlertCircle className="text-red-600" size={24} />
               <p className="text-red-800 font-medium">Token limit reached! Remove tokens from other shops to allocate more.</p>

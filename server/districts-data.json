@@ -6550,5 +6550,5493 @@
     "Category": "GOUD",
     "Excise_Station": "MOTHKUR",
     "District": "Yadadri Bhuvanagiri"
-  }
-]
+  },
+    {
+      "Gazette_code": "HYD001",
+      "Locality": "Shop No.1 Venkateshwara Colony, Banjara Hills(Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD002",
+      "Locality": "Shop No.2 Venkateshwara Colony, Banjara Hills(Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD003",
+      "Locality": "Shop No.3 Venkateshwara Colony, Banjara Hills(Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD004",
+      "Locality": "Shop No.4 Venkateshwara Colony, Banjara Hills(Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD005",
+      "Locality": "Shop No.5 Venkateshwara Colony, Banjara Hills(Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD006",
+      "Locality": "Shop No.6 Venkateshwara Colony, Banjara Hills(Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD007",
+      "Locality": "Shop No.1 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD008",
+      "Locality": "Shop No.2 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD009",
+      "Locality": "Shop No.3 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD010",
+      "Locality": "Shop No.4 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD011",
+      "Locality": "Shop No.5 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD012",
+      "Locality": "Shop No.6 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD013",
+      "Locality": "Shop No.7 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD014",
+      "Locality": "Shop No.8 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD015",
+      "Locality": "Shop No.9 Ameerpet, Sanathnagar, Erragadda, Borabanda",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD016",
+      "Locality": "Shop No.1 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD017",
+      "Locality": "Shop No.2 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD018",
+      "Locality": "Shop No.3 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD019",
+      "Locality": "Shop No.4 Shaikpet / Jubilee Hills / Yousufguda / Vengalraonagar / Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD020",
+      "Locality": "Shop No.5 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD021",
+      "Locality": "Shop No.6 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD022",
+      "Locality": "Shop No.7 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD023",
+      "Locality": "Shop No.8 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD024",
+      "Locality": "Shop No.9 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD025",
+      "Locality": "Shop No.10 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD026",
+      "Locality": "Shop No.11 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD027",
+      "Locality": "Shop No.12 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD028",
+      "Locality": "Shop No.13 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD029",
+      "Locality": "Shop No.14 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD030",
+      "Locality": "Shop No.15 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD031",
+      "Locality": "Shop No.16 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD032",
+      "Locality": "Shop No.17 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD033",
+      "Locality": "Shop No.18 Shaikpet (Part), Jubilee Hills, Yousufguda, Vengalraonagar, Rahmathnagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "AMEERPET & JUBILEE HILLS",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD034",
+      "Locality": "Shop No.1 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD035",
+      "Locality": "Shop No.2 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD036",
+      "Locality": "Shop No.3 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD037",
+      "Locality": "Shop No.4 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD038",
+      "Locality": "Shop No.5 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD039",
+      "Locality": "Shop No.6 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD040",
+      "Locality": "Shop No.7 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD041",
+      "Locality": "Shop No.8 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD042",
+      "Locality": "Shop No.9 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD043",
+      "Locality": "Shop No.10 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD044",
+      "Locality": "Shop No.11 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD045",
+      "Locality": "Shop No.12 Red Hills, Mallepally (Part) Gunfoundry (Part), Khairtabad, Banjara Hills (Part), Somajiguda (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "NAMPALLY",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD046",
+      "Locality": "Shop No.1 Langerhouse, Golkonda, Tolichowki, Nanalnagar, Shaikpet (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD047",
+      "Locality": "Shop No.2 Langerhouse, Golkonda, Tolichowki, Nanalnagar, Shaikpet (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD048",
+      "Locality": "Shop No.3 Langerhouse, Golkonda, Tolichowki, Nanalnagar, Shaikpet (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD049",
+      "Locality": "Shop No.4 Langerhouse, Golkonda, Tolichowki, Nanalnagar, Shaikpet (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD050",
+      "Locality": "Shop No.5 Langerhouse, Golkonda, Tolichowki, Nanalnagar, Shaikpet (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD051",
+      "Locality": "Shop No.1 Mehdipatnam, Gudimalkapur(Part), Asifnagar, Vijaynagar Colony, Ahmed Nagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD052",
+      "Locality": "Shop No.2 Mehdipatnam, Gudimalkapur(Part), Asifnagar, Vijaynagar Colony, Ahmed Nagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD053",
+      "Locality": "Shop No.3 Mehdipatnam, Gudimalkapur(Part), Asifnagar, Vijaynagar Colony, Ahmed Nagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD054",
+      "Locality": "Shop No.4 Mehdipatnam, Gudimalkapur(Part), Asifnagar, Vijaynagar Colony, Ahmed Nagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD055",
+      "Locality": "Shop No.5 Mehdipatnam, Gudimalkapur(Part), Asifnagar, Vijaynagar Colony, Ahmed Nagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD056",
+      "Locality": "Shop No.6 Mehdipatnam, Gudimalkapur(Part), Asifnagar, Vijaynagar Colony, Ahmed Nagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD057",
+      "Locality": "Shop No.7 Mehdipatnam, Gudimalkapur(Part), Asifnagar, Vijaynagar Colony, Ahmed Nagar",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "GOLCONDA",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD058",
+      "Locality": "Shop No.1 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD059",
+      "Locality": "Shop No.2 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD060",
+      "Locality": "Shop No.3 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD061",
+      "Locality": "Shop No.4 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD062",
+      "Locality": "Shop No.5 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD063",
+      "Locality": "Shop No.6 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD064",
+      "Locality": "Shop No.7 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD065",
+      "Locality": "Shop No.8 Dabeerpura (Part), Moghalpura, Talabchanchalam(Part), Gowlipura, Lalithabagh, Barkas, Chandryangutta, Uppuguda, Jangammet, Falaknuma",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD066",
+      "Locality": "Shop No.1 Pathergatti, Nawabsahabkunta, Shalibanda, Ghansibazar, Puranapool, Doodhbowli, Jahanuma, Ramnasthpura (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD067",
+      "Locality": "Shop No.2 Pathergatti, Nawabsahabkunta, Shalibanda, Ghansibazar, Puranapool, Doodhbowli, Jahanuma, Ramnasthpura (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD068",
+      "Locality": "Shop No.3 Pathergatti, Nawabsahabkunta, Shalibanda, Ghansibazar, Puranapool, Doodhbowli, Jahanuma, Ramnasthpura (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD069",
+      "Locality": "Shop No.4 Pathergatti, Nawabsahabkunta, Shalibanda, Ghansibazar, Puranapool, Doodhbowli, Jahanuma, Ramnasthpura (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD070",
+      "Locality": "Shop No.5 Pathergatti, Nawabsahabkunta, Shalibanda, Ghansibazar, Puranapool, Doodhbowli, Jahanuma, Ramnasthpura (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD071",
+      "Locality": "Shop No.6 Pathergatti, Nawabsahabkunta, Shalibanda, Ghansibazar, Puranapool, Doodhbowli, Jahanuma, Ramnasthpura (Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "CHARMINAR",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD072",
+      "Locality": "Shop No.1 Begumbazar (Part), Goshamahal, Mangalhat, Mallepally(Part), Jambagh",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD073",
+      "Locality": "Shop No.2 Begumbazar (Part), Goshamahal, Mangalhat, Mallepally(Part), Jambagh",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD074",
+      "Locality": "Shop No.3 Begumbazar (Part), Goshamahal, Mangalhat, Mallepally(Part), Jambagh",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD075",
+      "Locality": "Shop No.4 Begumbazar (Part), Goshamahal, Mangalhat, Mallepally(Part), Jambagh",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD076",
+      "Locality": "Shop No.5 Begumbazar (Part), Goshamahal, Mangalhat, Mallepally(Part), Jambagh",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD077",
+      "Locality": "Shop No.6 Begumbazar (Part), Goshamahal, Mangalhat, Mallepally(Part), Jambagh",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "ST",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD078",
+      "Locality": "Shop No.1 Ramnasthpura(Part), Kishanbagh, Jiyaguda, Dattatreya Nagar, Karwan, Gudimalakpur(Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD079",
+      "Locality": "Shop No.2 Ramnasthpura(Part), Kishanbagh, Jiyaguda, Dattatreya Nagar, Karwan, Gudimalakpur(Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD080",
+      "Locality": "Shop No.3 Ramnasthpura(Part), Kishanbagh, Jiyaguda, Dattatreya Nagar, Karwan, Gudimalakpur(Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD081",
+      "Locality": "Shop No.4 Ramnasthpura(Part), Kishanbagh, Jiyaguda, Dattatreya Nagar, Karwan, Gudimalakpur(Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "HYD082",
+      "Locality": "Shop No.5 Ramnasthpura(Part), Kishanbagh, Jiyaguda, Dattatreya Nagar, Karwan, Gudimalakpur(Part)",
+      "Annual_Excise_tax": "110.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "DHOOLPET",
+      "District": "Hyderabad"
+    },
+    {
+      "Gazette_code": "MKG001",
+      "Locality": "Machabollaram, Alwal, Venkatapuram, Shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG002",
+      "Locality": "Machabollaram, Alwal, Venkatapuram, Shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG003",
+      "Locality": "Machabollaram, Alwal, Venkatapuram,Shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG004",
+      "Locality": "Machabollaram, Alwal, Venkatapuram, shop No 4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG005",
+      "Locality": "Machabollaram, Alwal, Venkatapuram, shop No 5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG006",
+      "Locality": "Machabollaram, Alwal, Venkatapuram, shop No.6",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG007",
+      "Locality": "Machabolaram, Alwal, Venkatapuram shop No.7",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG008",
+      "Locality": "Machabollaram, Alwal, Venkatapuram, shop No .8",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG009",
+      "Locality": "Neredmet, Vinayaknagar, Moula Ali, East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG010",
+      "Locality": "Neredmet, Vinayaknagar, Moula Ali, East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG011",
+      "Locality": "Neredmet, Vinayaknagar, Moula Ali, East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG012",
+      "Locality": "Neredmet, Vinayaknagar, Moula Ali, East Anand Bagh, Malkajgiri,Goutham Nagar, shop No 5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG013",
+      "Locality": "Neredmet, Vinayaknagar,Moula Ali,East Anand Bagh, Malkajgiri,Goutham Nagar, shop No 5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG014",
+      "Locality": "Neredmet, Vinayaknagar, Moula Ali,East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.6",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG015",
+      "Locality": "Neredmet, Vinayaknagar, Moula Ali,East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.7",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG016",
+      "Locality": "Neredmet, Vinayaknagar,Moula JAl,East Anand Bagh, Malkajgiri,Goutham Nagar, shop No 8",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG017",
+      "Locality": "Neredmet, Vinayaknagar, Moula Al, East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.9",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG018",
+      "Locality": "Neredmet, Vinayaknagar, Moula JAli,East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.10",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG019",
+      "Locality": "Neredmet, Vinayaknagar, Moula Al, East Anand Bagh, Malkajgiri,Goutham Nagar, shop No.11",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Malkajgiri",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG020",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG021",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam shop No 2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG022",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam, shop No 3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG023",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam shop No 4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG024",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam shop No.5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG025",
+      "Locality": "Housing Board Colony-Meerpet., Mallapur, Nacharam shop No.6",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG026",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam shop No.7",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG027",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam shop No. 8",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG028",
+      "Locality": "Housing Board Colony-Meerpet, Mallapur, Nacharam shop No.9",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG029",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG030",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No 2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG031",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No. 3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG032",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No.4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG033",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No. 5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG034",
+      "Locality": "Chilkanagar, Habsiguda, RamaNthapur, Uppal shop No.6",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG035",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No. 7",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG036",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No.8",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG037",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No.9",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG038",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No.10",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG039",
+      "Locality": "Chilkanagar, Habsiguda, Ramanthapur, Uppal shop No.11",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG040",
+      "Locality": "Nagole, Kothapet, shop No 1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG041",
+      "Locality": "Nagole, Kothapet, shop No 2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG042",
+      "Locality": "Nagole, Kothapet, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG043",
+      "Locality": "Nagole, Kothapet, shop No.4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG044",
+      "Locality": "Nagole, Kothapet, shop No.5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG045",
+      "Locality": "Nagole, Kothapet, shop No 6",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG046",
+      "Locality": "Nagole, Kothapet, shop No.7",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG047",
+      "Locality": "Nagole, Kothapet, shop No.8",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Uppal",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG048",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG049",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG050",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG051",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG052",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG053",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.6",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG054",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.7",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG055",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.8",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG056",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.9",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG057",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.10",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG058",
+      "Locality": "Kapra, AS Rao Nagar, Cherlapally, shop No.11",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG059",
+      "Locality": "Jawaharnagar Municipal Corporation, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG060",
+      "Locality": "Jawaharnagar Municipal Corporation, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG061",
+      "Locality": "Jawaharnagar Municipal Corporation, shop No 3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG062",
+      "Locality": "Boduppal Municipal Corporation, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG063",
+      "Locality": "Boduppal Municipal Corporation, shop No 2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG064",
+      "Locality": "Boduppal Municipal Corporation, shop No 3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG065",
+      "Locality": "Boduppal Municipal Corporation, shop No 4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG066",
+      "Locality": "Boduppal Municipal Corporation, shop No 5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG067",
+      "Locality": "Peerzadiguda Municipal Corporation, shop No 1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG068",
+      "Locality": "Peerzadiguda Municipal Corporation, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG069",
+      "Locality": "Peerzadiguda Municipal Corporation, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG070",
+      "Locality": "Peerzadiguda Municipal Corporation, shop No.4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG071",
+      "Locality": "Peerzadiguda Municipal Corporation, shop No.5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG072",
+      "Locality": "Peerzadiguda Municipal Corporation, shop No.6",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG073",
+      "Locality": "Nagaram Municipality, shop No. 1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG074",
+      "Locality": "Nagaram Municipality, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "ST",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG075",
+      "Locality": "Nagaram Municipality, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG076",
+      "Locality": "Nagaram Municipality, shop No.4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG077",
+      "Locality": "Nagaram Municipality, shop No.5",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG078",
+      "Locality": "Dammaiguda Municipality, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG079",
+      "Locality": "Dammaiguda Municipality, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG080",
+      "Locality": "Dammaiguda Municipality, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG081",
+      "Locality": "Dammaiguda Municipality, shop No.4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG082",
+      "Locality": "Pocharam Municipality, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG083",
+      "Locality": "Pocharam Municipality, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG084",
+      "Locality": "Pocharam Municipality, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG085",
+      "Locality": "Pocharam Municipality, shop No.,4",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG086",
+      "Locality": "Ghatkesar Municipality, shop No.1",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG087",
+      "Locality": "Ghatkesar Municipality, shop No.2",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MKG088",
+      "Locality": "Ghatkesar Municipality, shop No.3",
+      "Annual_Excise_tax": "110 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ghatkesar",
+      "District": "Medchal-Malkajgiri"
+    },
+    {
+      "Gazette_code": "MDK001",
+      "Locality": "Medak Municipality. Shop No.1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK002",
+      "Locality": "Medak Municipality. Shop No.2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK003",
+      "Locality": "Medak Municipality. Shop No.3",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK004",
+      "Locality": "Medak Municipality. Shop No.4",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK005",
+      "Locality": "Medak Municipality. Shop No.5",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK006",
+      "Locality": "Shankarampet (A) Village, Shop No.1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK007",
+      "Locality": "Shankarampet (A) Village, Shop No.2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK008",
+      "Locality": "Alladurg Village",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK009",
+      "Locality": "Mambojipally Village",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK010",
+      "Locality": "Papannapet Village",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK011",
+      "Locality": "Tekmal Village",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK012",
+      "Locality": "Podichanpally Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK013",
+      "Locality": "Haveli Ghanpur Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK014",
+      "Locality": "Kulcharam / Pothamshettipally / Appajipally Villages of Kulcharam Mandal, Shop No:1",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK015",
+      "Locality": "Kulcharam / Pothamshettipally / Appajipally Villages of Kulcharam Mandal, Shop No:2",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK016",
+      "Locality": "Rangampet Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Medak",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK017",
+      "Locality": "Regode Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK018",
+      "Locality": "Toopran Municipality, Shop No.1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK019",
+      "Locality": "Toopran Municipality, Shop No.2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK020",
+      "Locality": "Toopran Municipality, Shop No.3",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK021",
+      "Locality": "Toopran Municipality, Shop No.4",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK022",
+      "Locality": "Toopran Municipality, Shop No.5",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK023",
+      "Locality": "Narsapur Municipality, Shop No.1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK024",
+      "Locality": "Narsapur Municipality, Shop No.2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK025",
+      "Locality": "Narsapur Municipality, Shop No.3",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK026",
+      "Locality": "Narsapur Municipality, Shop No.4",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK027",
+      "Locality": "Kallakal Village, Shop No.1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK028",
+      "Locality": "Kallakal Village, Shop No.2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK029",
+      "Locality": "Shivampet Village",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK030",
+      "Locality": "Kowdipally Village, Shop No.1",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK031",
+      "Locality": "Kowdipally Village, Shop No.2",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK032",
+      "Locality": "Donthi Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK033",
+      "Locality": "Jaggampet Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK034",
+      "Locality": "Manoharabad Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Narsapur",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK035",
+      "Locality": "Ramayampet Municipality, Shop No.1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK036",
+      "Locality": "Ramayampet Municipality, Shop No.2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK037",
+      "Locality": "Ramayampet Municipality, Shop No.3",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK038",
+      "Locality": "Chegunta Village, Shop No. 1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK039",
+      "Locality": "Chegunta Village, Shop No. 2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK040",
+      "Locality": "Yeldurthy/ Eshwanthraopet Villages of Yeldurthy Mandal, Shop No:1",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK041",
+      "Locality": "Yeldurthy/ Eshwanthraopet Villages of Yeldurthy Mandal, Shop No:2",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK042",
+      "Locality": "Masaipet Village",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK043",
+      "Locality": "Narsingi Village",
+      "Annual_Excise_tax": "55.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK044",
+      "Locality": "Wadiyaram Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "SC",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK045",
+      "Locality": "Nizampet/ Kalvakunta Villages of Nizampet Mandal, Shop No:1",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "GOUD",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK046",
+      "Locality": "Nizampet/ Kalvakunta Villages of Nizampet Mandal, Shop No:2",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK047",
+      "Locality": "ShankarampetR'/ Madoor Villages of Shankarampet 'R' Mandal, Shop No :1",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK048",
+      "Locality": "Shankarampet' R'/ Madoor Villages of Shankarampet 'R' Mandal, Shop No :2",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "OPEN",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+    {
+      "Gazette_code": "MDK049",
+      "Locality": "Gavvalapally Village",
+      "Annual_Excise_tax": "50.00 lakhs",
+      "Category": "ST",
+      "Excise_Station": "Ramayampet",
+      "District": "Medak"
+    },
+      {
+        "Gazette_code": "MED001",
+        "Locality": "KPHB Colony - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED002",
+        "Locality": "KPHB Colony - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED003",
+        "Locality": "KPHB Colony - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED004",
+        "Locality": "KPHB Colony - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED005",
+        "Locality": "KPHB Colony - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED006",
+        "Locality": "KPHB Colony - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED007",
+        "Locality": "KPHB Colony - Shop No-7",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED008",
+        "Locality": "KPHB Colony - Shop No-8",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED009",
+        "Locality": "KPHB Colony - Shop No-9",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED010",
+        "Locality": "Balajinagar, Allapur & Moosapet - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED011",
+        "Locality": "Balajinagar, Allapur & Moosapet - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED012",
+        "Locality": "Balajinagar, Allapur & Moosapet - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED013",
+        "Locality": "Balajinagar, Allapur & Moosapet - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED014",
+        "Locality": "Balajinagar, Allapur & Moosapet - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED015",
+        "Locality": "Balajinagar, Allapur & Moosapet - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED016",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED017",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED018",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED019",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED020",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED021",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED022",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-7",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED023",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-8",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED024",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-9",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED025",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-10",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED026",
+        "Locality": "Fathenagar, Old Boinpally & Balanagar - Shop No-11",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED027",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED028",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED029",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED030",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED031",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED032",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED033",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-7",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED034",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-8",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED035",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-9",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED036",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-10",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED037",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-11",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED038",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-12",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED039",
+        "Locality": "Kukatpally, Vivekanandha Nagar Colony, Hydernagar & Allwyn Colony - Shop No-13",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED040",
+        "Locality": "Begumpet - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED041",
+        "Locality": "Begumpet - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED042",
+        "Locality": "Begumpet - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: BALANAGAR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED043",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED044",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED045",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED046",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED047",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED048",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED049",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-7",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED050",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-8",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED051",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-9",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED052",
+        "Locality": "Gajularamaram, Jagathgirigutta, Ranga Reddy Nagar & Chinthal - Shop No-10",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED053",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED054",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED055",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED056",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED057",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED058",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED059",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-7",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED060",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-8",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED061",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-9",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED062",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-10",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED063",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-11",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED064",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-12",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED065",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-13",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED066",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-14",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED067",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-15",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED068",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-16",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED069",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-17",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED070",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-18",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED071",
+        "Locality": "Suraram, Subash Nagar, Quthbullapur & Jeedimetla - Shop No-19",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED072",
+        "Locality": "Nizampet Municipal Corporation - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED073",
+        "Locality": "Nizampet Municipal Corporation - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED074",
+        "Locality": "Nizampet Municipal Corporation - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED075",
+        "Locality": "Nizampet Municipal Corporation - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED076",
+        "Locality": "Nizampet Municipal Corporation - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "ST",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED077",
+        "Locality": "Nizampet Municipal Corporation - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED078",
+        "Locality": "Nizampet Municipal Corporation - Shop No-7",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED079",
+        "Locality": "Nizampet Municipal Corporation - Shop No-8",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED080",
+        "Locality": "Dundigal Municipality - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED081",
+        "Locality": "Dundigal Municipality - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED082",
+        "Locality": "Dundigal Municipality - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED083",
+        "Locality": "Dundigal Municipality - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED084",
+        "Locality": "Dundigal Municipality - Shop No-5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED085",
+        "Locality": "Dundigal Municipality - Shop No-6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED086",
+        "Locality": "Kompally Municipality - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED087",
+        "Locality": "Kompally Municipality - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED088",
+        "Locality": "Kompally Municipality - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED089",
+        "Locality": "Kompally Municipality - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: QUTHBULLAPUR",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED090",
+        "Locality": "Gundlapochampally Municipality",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED091",
+        "Locality": "Thumkunta Municipality - Shop No-1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED092",
+        "Locality": "Thumkunta Municipality - Shop No-2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED093",
+        "Locality": "Thumkunta Municipality - Shop No-3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED094",
+        "Locality": "Thumkunta Municipality - Shop No-4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED095",
+        "Locality": "Medchal Municipality - Shop No-1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED096",
+        "Locality": "Medchal Municipality - Shop No-2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED097",
+        "Locality": "Medchal Municipality - Shop No-3",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED098",
+        "Locality": "Medchal Municipality - Shop No-4",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED099",
+        "Locality": "Medchal Municipality - Shop No-5",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED100",
+        "Locality": "Medchal Municipality - Shop No-6",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED101",
+        "Locality": "Medchal Municipality - Shop No-7",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED102",
+        "Locality": "Medchal Municipality - Shop No-8",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED103",
+        "Locality": "Medchal Municipality - Shop No-9",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED104",
+        "Locality": "Medchal Municipality - Shop No-10",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED105",
+        "Locality": "Medchal Municipality - Shop No-11",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED106",
+        "Locality": "Medchal Municipality - Shop No-12",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED107",
+        "Locality": "Medchal Municipality - Shop No-13",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED108",
+        "Locality": "Medchal Municipality - Shop No-14",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED109",
+        "Locality": "Yellampet Municipality",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED110",
+        "Locality": "Aliabad Municipality - Shop No-1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED111",
+        "Locality": "Aliabad Municipality - Shop No-2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED112",
+        "Locality": "Aliabad Municipality - Shop No-3",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED113",
+        "Locality": "Aliabad Municipality - Shop No-4",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED114",
+        "Locality": "Aliabad Municipality - Shop No-5",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED115",
+        "Locality": "Muduchinthalapally Municipality - Shop No-1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED116",
+        "Locality": "Muduchinthalapally Municipality - Shop No-2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED117",
+        "Locality": "Muduchinthalapally Municipality - Shop No-3",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "MED118",
+        "Locality": "Muduchinthalapally Municipality - Shop No-4",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: MEDCHAL",
+        "District": "Medchal-Malkajgiri"
+      },
+      {
+        "Gazette_code": "SGR001",
+        "Locality": "Hanuman Nagar, Ram Nagar, and other areas of these wards, Shop No.1",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR002",
+        "Locality": "Hanuman Nagar, Ram Nagar, and other areas of these wards, Shop No.2",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR003",
+        "Locality": "Housing Board Colony, Pothireddypally Chowrastha and other areas of these wards. Shop No.1",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR004",
+        "Locality": "Housing Board Colony, Pothireddypally Chowrastha and other areas of these wards Shop No.2",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR005",
+        "Locality": "Housing Board Colony, Pothireddypally Chowrastha and other areas of these wards Shop No.3",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR006",
+        "Locality": "Housing Board Colony, Pothireddypally Chowrastha and other areas of these wards Shop No.4",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR007",
+        "Locality": "Brundavan Colony, Burma Colony, Veerabadranagar and other areas of these wards Shop No.1",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR008",
+        "Locality": "Brundavan Colony, Burma Colony, Veerabadranagar and other areas of these wards Shop No.2",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR009",
+        "Locality": "Brundavan Colony, Burma Colony, Veerabadranagar and other areas of these wards Shop No.3",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR010",
+        "Locality": "Brundavan Colony, Burma Colony, Veerabadranagar and other areas of these wards Shop No.4",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR011",
+        "Locality": "Kandi (V) Shop No.1",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR012",
+        "Locality": "Kandi (V) Shop No.2",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR013",
+        "Locality": "Ismailkhanpet (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR014",
+        "Locality": "Sadasivapet Municipality, Shop No.1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR015",
+        "Locality": "Sadasivapet Municipality, Shop No.2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR016",
+        "Locality": "Sadasivapet Municipality, Shop No.3",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR017",
+        "Locality": "Sadasivapet Municipality, Shop No.4",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR018",
+        "Locality": "Sadasivapet Municipality, Shop No.5",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR019",
+        "Locality": "Sadasivapet Municipality, Shop No.6",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR020",
+        "Locality": "Kondapur (V) Shop No.1",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR021",
+        "Locality": "Kondapur (V) Shop No.2",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR022",
+        "Locality": "Munipally (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR023",
+        "Locality": "Budhera (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR024",
+        "Locality": "Thatipally (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: SANGAREDDY",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR025",
+        "Locality": "Bharathinagar & Ramchandrapuram of GHMC, Shop No.1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR026",
+        "Locality": "Bharathinagar & Ramchandrapuram of GHMC, Shop No.2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR027",
+        "Locality": "Bharathinagar & Ramchandrapuram of GHMC, Shop No.3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR028",
+        "Locality": "Bharathinagar & Ramchandrapuram of GHMC, Shop No.4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR029",
+        "Locality": "Bharathinagar & Ramchandrapuram of GHMC, Shop No.5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR030",
+        "Locality": "Bharathinagar & Ramchandrapuram of GHMC, Shop No.6",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR031",
+        "Locality": "Patancheru of GHMC, Shop No.1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR032",
+        "Locality": "Patancheru of GHMC, Shop No.2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR033",
+        "Locality": "Patancheru of GHMC, Shop No.3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR034",
+        "Locality": "Patancheru of GHMC, Shop No.4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR035",
+        "Locality": "Isnapur Municipality, Shop No.1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR036",
+        "Locality": "Isnapur Municipality, Shop No.2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR037",
+        "Locality": "Isnapur Municipality, Shop No.3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR038",
+        "Locality": "Isnapur Municipality, Shop No.4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR039",
+        "Locality": "Isnapur Municipality, Shop No.5",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR040",
+        "Locality": "Indresham Municipality",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR041",
+        "Locality": "Ameenpur Municipality, Shop No.1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR042",
+        "Locality": "Ameenpur Municipality, Shop No.2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR043",
+        "Locality": "Ameenpur Municipality, Shop No.3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR044",
+        "Locality": "Ameenpur Municipality, Shop No.4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR045",
+        "Locality": "Bollaram Municipality, Shop No.1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR046",
+        "Locality": "Bollaram Municipality, Shop No.2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR047",
+        "Locality": "Bollaram Municipality, Shop No.3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR048",
+        "Locality": "Tellapur Municipality Shop No. 1",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR049",
+        "Locality": "Tellapur Municipality Shop No. 2",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR050",
+        "Locality": "Tellapur Municipality Shop No. 3",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR051",
+        "Locality": "Tellapur Municipality Shop No. 4",
+        "Annual_Excise_tax": "110 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR052",
+        "Locality": "Bhanoor (V), Shop No.1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR053",
+        "Locality": "Bhanoor (V), Shop No.2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR054",
+        "Locality": "Gummadidala (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR055",
+        "Locality": "Annaram (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR056",
+        "Locality": "Bonthapally (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR057",
+        "Locality": "Solakpally (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "ST",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR058",
+        "Locality": "Jinnaram (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR059",
+        "Locality": "Gaddapotharam (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: PATANCHERU",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR060",
+        "Locality": "Rachannapet, Check Post and other areas of these wards, Shop No.1",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR061",
+        "Locality": "Rachannapet, Check Post and other areas of these wards, Shop No.2",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR062",
+        "Locality": "Rachannapet, Check Post and other areas of these wards, Shop No.3",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR063",
+        "Locality": "Rachannapet, Check Post and other areas of these wards, Shop No.4",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR064",
+        "Locality": "Bus stand area, Christian Colony, Chinna Hyderabad Pastapur, Allipur and other areas of these wards, Shop No.1",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR065",
+        "Locality": "Bus stand area, Christian Colony, Chinna Hyderabad Pastapur, Allipur and other areas of these wards, Shop No.2",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR066",
+        "Locality": "Bus stand area, Christian Colony, Chinna Hyderabad Pastapur, Allipur and other areas of these wards, Shop No.3",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR067",
+        "Locality": "Bus stand area, Christian Colony, Chinna Hyderabad Pastapur, Allipur and other areas of these wards, Shop No.4",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR068",
+        "Locality": "Bus stand area, Christian Colony, Chinna Hyderabad Pastapur, Allipur and other areas of these wards, Shop No.5",
+        "Annual_Excise_tax": "60 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR069",
+        "Locality": "Mogudampally (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR070",
+        "Locality": "Kohir (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR071",
+        "Locality": "Kaveli 'X' Road",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "ST",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR072",
+        "Locality": "Raikode (V), Shop No.1",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "GOUD",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR073",
+        "Locality": "Raikode (V), Shop No.2",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR074",
+        "Locality": "Jharasangam (V) Shop No.1",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR075",
+        "Locality": "Jharasangam (V) Shop No.2",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ZAHEERABAD",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR076",
+        "Locality": "Narayankhed Municipality, Shop No.1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR077",
+        "Locality": "Narayankhed Municipality, Shop No.2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR078",
+        "Locality": "Narayankhed Municipality, Shop No.3",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR079",
+        "Locality": "Narayankhed Municipality, Shop No.4",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR080",
+        "Locality": "Nizampet (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR081",
+        "Locality": "Sirgapur (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR082",
+        "Locality": "Thadkal (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR083",
+        "Locality": "Karasgutti (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR084",
+        "Locality": "Manoor (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR085",
+        "Locality": "Masanpally, Mahadevpally Villages",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR086",
+        "Locality": "Nyalkal (V), Shop No.1",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR087",
+        "Locality": "Nyalkal (V), Shop No.2",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR088",
+        "Locality": "Gangwar (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: NARAYANKHED",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR089",
+        "Locality": "Andole - JogipetMunicipality, Shop No.1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR090",
+        "Locality": "Andole - JogipetMunicipality, Shop No.2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR091",
+        "Locality": "Andole - JogipetMunicipality, Shop No.3",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR092",
+        "Locality": "Choutkur (V)",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR093",
+        "Locality": "Hathnoora, Kasal, Doulthabad Villages, Shop No.1",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR094",
+        "Locality": "Hathnoora, Kasal, Doulthabad Villages, Shop No.2",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR095",
+        "Locality": "Hathnoora, Kasal, Doulthabad Villages, Shop No.3",
+        "Annual_Excise_tax": "55 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR096",
+        "Locality": "Shivampet (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR097",
+        "Locality": "Chintalchervu (V)",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR098",
+        "Locality": "Pulkal, Muddaipeta, Pocharam, Singoor Villages, Shop No.1",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR099",
+        "Locality": "Pulkal, Muddaipeta, Pocharam, Singoor Villages, Shop No.2",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR100",
+        "Locality": "Watpally, Gorrekal, Dudyala, Medikunda Villages Shop No.1",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "OPEN",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+      {
+        "Gazette_code": "SGR101",
+        "Locality": "Watpally, Gorrekal, Dudyala, Medikunda Villages Shop No.2",
+        "Annual_Excise_tax": "50 lakhs",
+        "Category": "SC",
+        "Excise_Station": "PROHIBITION AND EXCISE STATION: ANDOLE",
+        "District": "Sangareddy"
+      },
+        {
+          "Gazette_code": "SRN001",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN002",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN003",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN004",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN005",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN006",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN007",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN008",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN009",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 9",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN010",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 10",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN011",
+          "Locality": "Mansoorabad (Part of Saroornagar), Vanasthalipuram (Part of Saroornagar), Hasthinapur, Champapet and Lingojiguda, Shop No: 11",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN012",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN013",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN014",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN015",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN016",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN017",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN018",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN019",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN020",
+          "Locality": "Saroornagar, R.K.Puram, Kothapet, Chaitanyapuri, Gaddiannaram, Shop No: 9",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN021",
+          "Locality": "Meerpet Corporation Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN022",
+          "Locality": "Meerpet Corporation Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN023",
+          "Locality": "Meerpet Corporation Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN024",
+          "Locality": "Meerpet Corporation Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN025",
+          "Locality": "Meerpet Corporation Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN026",
+          "Locality": "Meerpet Corporation Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN027",
+          "Locality": "Meerpet Corporation Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN028",
+          "Locality": "Meerpet Corporation Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN029",
+          "Locality": "Badangpet Corporation Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN030",
+          "Locality": "Badangpet Corporation Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN031",
+          "Locality": "Badangpet Corporation Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN032",
+          "Locality": "Jalpally Municipality",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Saroornagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN033",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN034",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN035",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN036",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN037",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN038",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN039",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN040",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN041",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 9",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN042",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 10",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN043",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 11",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN044",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 12",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN045",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 13",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN046",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 14",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN047",
+          "Locality": "Mansoorabad (Part of Hayathnagar), Hayathnagar, BN Reddy Nagar & Vanasthalipuram (part of Hayathnagar) Shop No: 15",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN048",
+          "Locality": "Pedda Amberpet Municipality Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN049",
+          "Locality": "Pedda Amberpet Municipality Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN050",
+          "Locality": "Pedda Amberpet Municipality Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN051",
+          "Locality": "Pedda Amberpet Municipality Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN052",
+          "Locality": "Abdullapurmet village",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN053",
+          "Locality": "Turkayamzal Municipality Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN054",
+          "Locality": "Turkayamzal Municipality Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN055",
+          "Locality": "Turkayamzal Municipality Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN056",
+          "Locality": "Turkayamzal Municipality Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN057",
+          "Locality": "Anajpur Village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN058",
+          "Locality": "Kothagudem village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN059",
+          "Locality": "Batasingaram village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN060",
+          "Locality": "Bandaraviryala village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "ST",
+          "Excise_Station": "Hayathnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN061",
+          "Locality": "Adibatla Municipality Shop No: 1",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN062",
+          "Locality": "Adibatla Municipality Shop No: 2",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN063",
+          "Locality": "Adibatla Municipality Shop No: 3",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN064",
+          "Locality": "Ibrahimpatnam Municipality Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN065",
+          "Locality": "Ibrahimpatnam Municipality Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN066",
+          "Locality": "Ibrahimpatnam Municipality Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN067",
+          "Locality": "Ibrahimpatnam Municipality Shop No: 4",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN068",
+          "Locality": "Ibrahimpatnam Municipality Shop No: 5",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN069",
+          "Locality": "Ibrahimpatnam Municipality Shop No: 6",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN070",
+          "Locality": "Dandumailaram village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN071",
+          "Locality": "Rayapole Village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN072",
+          "Locality": "Arutla village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN073",
+          "Locality": "Loyapally village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN074",
+          "Locality": "Manchal village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN075",
+          "Locality": "Gungal village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN076",
+          "Locality": "Yacharam village Shop No: 1",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN077",
+          "Locality": "Yacharam village Shop No: 2",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN078",
+          "Locality": "Medipally village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN079",
+          "Locality": "Mall Bazar village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Ibrahimpatnam",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN080",
+          "Locality": "Thukkuguda Municipality Shop No: 1",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN081",
+          "Locality": "Thukkuguda Municipality Shop No: 2",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "ST",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN082",
+          "Locality": "Thukkuguda Municipality Shop No: 3",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN083",
+          "Locality": "Thukkuguda Municipality Shop No: 4",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN084",
+          "Locality": "Thukkuguda Municipality Shop No: 5",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN085",
+          "Locality": "Maheshwaram village Shop No: 1",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN086",
+          "Locality": "Maheshwaram village Shop No: 2",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN087",
+          "Locality": "Tummaloor village",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN088",
+          "Locality": "Pendyala village / Mansanpally village/ Ameerpet village Shop No: 1",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN089",
+          "Locality": "Pendyala village / Mansanpally village/ Ameerpet village Shop No: 2",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN090",
+          "Locality": "Gummadvelly village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN091",
+          "Locality": "Kandukur village / Kothaguda village/ Shop No: 1",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN092",
+          "Locality": "Kandukur village / Kothaguda village/ Shop No: 2",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN093",
+          "Locality": "Kandukur village / Kothaguda village/ Shop No: 3",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Maheshwaram",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN094",
+          "Locality": "Amangal Municipality Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN095",
+          "Locality": "Amangal Municipality Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN096",
+          "Locality": "Amangal Municipality Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN097",
+          "Locality": "Amangal Municipality Shop No: 4",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN098",
+          "Locality": "Amangal Municipality Shop No: 5",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN099",
+          "Locality": "Amangal Municipality Shop No: 6",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN100",
+          "Locality": "Kadthal village Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN101",
+          "Locality": "Kadthal village Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN102",
+          "Locality": "Kadthal village Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN103",
+          "Locality": "Kadthal village Shop No: 4",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN104",
+          "Locality": "Mudwin village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN105",
+          "Locality": "Talkondapally village Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN106",
+          "Locality": "Talkondapally village Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN107",
+          "Locality": "Velijal village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN108",
+          "Locality": "Madgul village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN109",
+          "Locality": "Irwin village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN110",
+          "Locality": "Kulkulapally",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Amangal",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN111",
+          "Locality": "Shadnagar Municipality Shop No: 1",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN112",
+          "Locality": "Shadnagar Municipality Shop No: 2",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN113",
+          "Locality": "Shadnagar Municipality Shop No: 3",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN114",
+          "Locality": "Shadnagar Municipality Shop No: 4",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN115",
+          "Locality": "Shadnagar Municipality Shop No: 5",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN116",
+          "Locality": "Shadnagar Municipality Shop No: 6",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN117",
+          "Locality": "Shadnagar Municipality Shop No: 7",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN118",
+          "Locality": "Shadnagar Municipality Shop No: 8",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN119",
+          "Locality": "Shadnagar Municipality Shop No: 9",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN120",
+          "Locality": "Shadnagar Municipality Shop No: 10",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN121",
+          "Locality": "Shadnagar Municipality Shop No: 11",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN122",
+          "Locality": "Shadnagar Municipality Shop No: 12",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN123",
+          "Locality": "Shadnagar Municipality Shop No: 13",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN124",
+          "Locality": "Shadnagar Municipality Shop No: 14",
+          "Annual_Excise_tax": "60 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN125",
+          "Locality": "Kothur Municipality Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN126",
+          "Locality": "Kothur Municipality Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN127",
+          "Locality": "Kothur Municipality Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN129",
+          "Locality": "Nandigama village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN130",
+          "Locality": "Chakalidanigutta village",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN131",
+          "Locality": "Kondurgh village Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN132",
+          "Locality": "Kondurgh village Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN133",
+          "Locality": "Thimmapur",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN134",
+          "Locality": "Keshampet village Shop No: 1",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN135",
+          "Locality": "Keshampet village Shop No: 2",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN136",
+          "Locality": "Keshampet village Shop No: 3",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN137",
+          "Locality": "Chowdarguda village",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SRN138",
+          "Locality": "Lalpad chowrasta (Vanampalli)",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shadnagar",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB001",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB002",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB003",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB004",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB005",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB006",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB007",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB008",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB009",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 9",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB010",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 10",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB011",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 11",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB012",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 12",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB013",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 13",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB014",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 14",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB015",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 15",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB016",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 16",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB017",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 17",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB018",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 18",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB019",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 19",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB020",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 20",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB021",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 21",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB022",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 22",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB023",
+          "Locality": "Kondapur, Gachibowli, Serilingampally Shop No: 23",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB024",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB025",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB026",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB027",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB028",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB029",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB030",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB031",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB032",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 9",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB033",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 10",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB034",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 11",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB035",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 12",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB036",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 13",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB037",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 14",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB038",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 15",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB039",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 16",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB040",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 17",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB041",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 18",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB042",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 19",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB043",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 20",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB044",
+          "Locality": "Madhapur, Miyapur, Hafeezpet, Chanda Nagar Shop No: 21",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Serilingampally",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB045",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB046",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB047",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB048",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB049",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB050",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB051",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB052",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB053",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 9",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB054",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 10",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB055",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 11",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB056",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 12",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB057",
+          "Locality": "Suleman Nagar, Shastripuram, Mailardevpally, Rajendra Nagar, Athapur Shop No: 13",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB058",
+          "Locality": "Bandlaguda Jagir Municipal Corporation Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB059",
+          "Locality": "Bandlaguda Jagir Municipal Corporation Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB060",
+          "Locality": "Bandlaguda Jagir Municipal Corporation Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB061",
+          "Locality": "Bandlaguda Jagir Municipal Corporation Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB062",
+          "Locality": "Bandlaguda Jagir Municipal Corporation Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB063",
+          "Locality": "Manikonda Municipality Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB064",
+          "Locality": "Manikonda Municipality Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB065",
+          "Locality": "Manikonda Municipality Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB066",
+          "Locality": "Manikonda Municipality Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB067",
+          "Locality": "Manikonda Municipality Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB068",
+          "Locality": "Narsingi Municipality Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB069",
+          "Locality": "Narsingi Municipality Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB070",
+          "Locality": "Narsingi Municipality Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB071",
+          "Locality": "Narsingi Municipality Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB072",
+          "Locality": "Narsingi Municipality Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB073",
+          "Locality": "Narsingi Municipality Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB074",
+          "Locality": "Narsingi Municipality Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB075",
+          "Locality": "Narsingi Municipality Shop No: 8",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB076",
+          "Locality": "Shamshabad Municipality Shop No: 1",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB077",
+          "Locality": "Shamshabad Municipality Shop No: 2",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB078",
+          "Locality": "Shamshabad Municipality Shop No: 3",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB079",
+          "Locality": "Shamshabad Municipality Shop No: 4",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB080",
+          "Locality": "Shamshabad Municipality Shop No: 5",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB081",
+          "Locality": "Shamshabad Municipality Shop No: 6",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB082",
+          "Locality": "Shamshabad Municipality Shop No: 7",
+          "Annual_Excise_tax": "110 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB083",
+          "Locality": "Palmakula",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB084",
+          "Locality": "Ramanjapur",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Shamshabad",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB085",
+          "Locality": "Chevella Municipality Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB086",
+          "Locality": "Chevella Municipality Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB087",
+          "Locality": "Chevella Municipality Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB088",
+          "Locality": "Chevella Municipality Shop No: 4",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB089",
+          "Locality": "Moinabad Municipality Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB090",
+          "Locality": "Moinabad Municipality Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB091",
+          "Locality": "Moinabad Municipality Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB092",
+          "Locality": "Moinabad Municipality Shop No: 4",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB093",
+          "Locality": "Moinabad Municipality Shop No: 5",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB094",
+          "Locality": "Moinabad Municipality Shop No: 6",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "SC",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB095",
+          "Locality": "Shankarpally Municipality Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB096",
+          "Locality": "Shankarpally Municipality Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB097",
+          "Locality": "Shankarpally Municipality Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB098",
+          "Locality": "Shankarpally Municipality Shop No: 4",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB099",
+          "Locality": "Shankarpally Municipality Shop No: 5",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB100",
+          "Locality": "Shankarpally Municipality Shop No: 6",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB101",
+          "Locality": "Kanaka Mamidi",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB102",
+          "Locality": "Shabad Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB103",
+          "Locality": "Shabad Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB104",
+          "Locality": "Mokila Shop No: 1",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB105",
+          "Locality": "Mokila Shop No: 2",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB106",
+          "Locality": "Mokila Shop No: 3",
+          "Annual_Excise_tax": "55 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB107",
+          "Locality": "Khanapur",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB108",
+          "Locality": "Yenkepally",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB109",
+          "Locality": "Hyathabad",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB110",
+          "Locality": "Nagerguda",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "GOUD",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        },
+        {
+          "Gazette_code": "SSB111",
+          "Locality": "Sardar Nagar",
+          "Annual_Excise_tax": "50 lakhs",
+          "Category": "OPEN",
+          "Excise_Station": "Chevella",
+          "District": "Ranga Reddy"
+        }
+      ]
