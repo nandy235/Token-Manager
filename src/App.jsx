@@ -70,6 +70,64 @@ export default function TokenManager() {
     fetchShops();
   }, [selectedDistrict, selectedStation, mode]);
   
+  // Sync planning mode shops to real mode when switching
+  useEffect(() => {
+    const syncPlanningToReal = async () => {
+      if (mode === 'real') {
+        // Fetch both planning and real shops to compare
+        try {
+          const [planningResponse, realResponse] = await Promise.all([
+            fetch(`${API_URL}/api/shops`),
+            fetch(`${API_URL}/api/real`)
+          ]);
+          
+          const planningShops = await planningResponse.json();
+          const currentRealShops = await realResponse.json();
+          
+          if (planningShops.length > 0) {
+            let syncCount = 0;
+            for (const shop of planningShops) {
+              // Check if shop already exists in real mode by gazette_code
+              const existsInReal = currentRealShops.some(rs => rs.gazette_code === shop.gazette_code);
+              if (!existsInReal) {
+                const newRealShop = {
+                  name: shop.name,
+                  gazette_code: shop.gazette_code,
+                  category: shop.category,
+                  district: shop.district,
+                  station: shop.station,
+                  total_tokens: 0,
+                  allocated_tokens: ''
+                };
+                
+                const response = await fetch(`${API_URL}/api/real`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(newRealShop)
+                });
+                
+                if (response.ok) {
+                  syncCount++;
+                }
+              }
+            }
+            
+            // Refresh real shops after sync if any shops were added
+            if (syncCount > 0) {
+              fetchShops();
+              setSaveMessage(`✅ Synced ${syncCount} shop(s) from Planning Mode!`);
+              setTimeout(() => setSaveMessage(''), 3000);
+            }
+          }
+        } catch (error) {
+          console.error('Failed to sync planning to real mode:', error);
+        }
+      }
+    };
+    
+    syncPlanningToReal();
+  }, [mode]);
+  
   // Fetch PDF stations when PDF district changes
   useEffect(() => {
     fetchPdfStations(pdfDistrictFilter);
@@ -439,7 +497,20 @@ export default function TokenManager() {
       filteredShops = filteredShops.filter(shop => shop.station === pdfStationFilter);
     }
     
-    console.log('Filtered shops:', filteredShops.length);
+    // Exclude shops with zero data
+    filteredShops = filteredShops.filter(shop => {
+      if (mode === 'planning') {
+        // In planning mode, exclude shops with 0 tokens
+        return shop.tokens > 0;
+      } else {
+        // In real mode, exclude shops with no allocated tokens
+        const allocatedTokens = shop.allocated_tokens || '';
+        const tokenCount = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+        return tokenCount > 0;
+      }
+    });
+    
+    console.log('Filtered shops (excluding zero data):', filteredShops.length);
     
     // Determine report title based on filters
     let reportTitle = 'Shop Token Manager Report';
@@ -789,11 +860,27 @@ export default function TokenManager() {
           </div>
           <div class="summary-item">
             <div class="summary-label">Tokens Allocated</div>
-            <div class="summary-value">${filteredShops.reduce((sum, shop) => sum + shop.tokens, 0)}</div>
+            <div class="summary-value">${mode === 'planning' 
+              ? filteredShops.reduce((sum, shop) => sum + shop.tokens, 0)
+              : filteredShops.reduce((sum, shop) => {
+                  const allocatedTokens = shop.allocated_tokens || '';
+                  const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+                  return sum + count;
+                }, 0)
+            }</div>
           </div>
           <div class="summary-item">
             <div class="summary-label">Remaining</div>
-            <div class="summary-value">${tokenCap - filteredShops.reduce((sum, shop) => sum + shop.tokens, 0)}</div>
+            <div class="summary-value">${(() => {
+              const allocated = mode === 'planning'
+                ? filteredShops.reduce((sum, shop) => sum + shop.tokens, 0)
+                : filteredShops.reduce((sum, shop) => {
+                    const allocatedTokens = shop.allocated_tokens || '';
+                    const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+                    return sum + count;
+                  }, 0);
+              return tokenCap - allocated;
+            })()}</div>
           </div>
         </div>
         ` : ''}
@@ -824,7 +911,64 @@ export default function TokenManager() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Shop Token Manager</h1>
+          <div className="flex justify-between items-center mb-2">
+            <h1 className="text-3xl font-bold text-gray-800">Shop Token Manager</h1>
+            {mode === 'real' && (
+              <button
+                onClick={async () => {
+                  try {
+                    const [planningResponse, realResponse] = await Promise.all([
+                      fetch(`${API_URL}/api/shops`),
+                      fetch(`${API_URL}/api/real`)
+                    ]);
+                    
+                    const planningShops = await planningResponse.json();
+                    const currentRealShops = await realResponse.json();
+                    
+                    let syncCount = 0;
+                    for (const shop of planningShops) {
+                      const existsInReal = currentRealShops.some(rs => rs.gazette_code === shop.gazette_code);
+                      if (!existsInReal) {
+                        const newRealShop = {
+                          name: shop.name,
+                          gazette_code: shop.gazette_code,
+                          category: shop.category,
+                          district: shop.district,
+                          station: shop.station,
+                          total_tokens: 0,
+                          allocated_tokens: ''
+                        };
+                        
+                        const response = await fetch(`${API_URL}/api/real`, {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify(newRealShop)
+                        });
+                        
+                        if (response.ok) syncCount++;
+                      }
+                    }
+                    
+                    if (syncCount > 0) {
+                      fetchShops();
+                      setSaveMessage(`✅ Synced ${syncCount} shop(s) from Planning Mode!`);
+                    } else {
+                      setSaveMessage('ℹ️ All shops are already synced!');
+                    }
+                    setTimeout(() => setSaveMessage(''), 3000);
+                  } catch (error) {
+                    console.error('Failed to sync:', error);
+                    setSaveMessage('❌ Error syncing shops!');
+                    setTimeout(() => setSaveMessage(''), 3000);
+                  }
+                }}
+                className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition flex items-center gap-2 text-sm font-semibold"
+                title="Sync all shops from Planning Mode to Real Mode"
+              >
+                🔄 Sync from Planning Mode
+              </button>
+            )}
+          </div>
           
           {/* Mode Selection Radio Buttons */}
           <div className="mb-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border-2 border-purple-200">
@@ -1285,7 +1429,7 @@ export default function TokenManager() {
             <p className="text-sm text-gray-700 mb-2">
               <strong>How it works:</strong> {mode === 'planning' 
                 ? 'Manually assign tokens to each shop. The total cannot exceed the token cap. You can allocate them however you want - some shops can have more, others less, as long as the total stays within the cap.'
-                : 'In Real Mode: Enter the grand total tokens in "Total Tokens" field. Then enter the specific token numbers (e.g., 8, 19, 23) in "Our Allocated Tokens" field. The "Total Allocated Tokens" column will automatically count how many tokens you\'ve entered.'}
+                : 'In Real Mode: Shops from Planning Mode are automatically synced when you switch modes. Enter the grand total tokens in "Total Tokens" field. Then enter the specific token numbers (e.g., 8, 19, 23) in "Our Allocated Tokens" field. The "Total Allocated Tokens" column will automatically count how many tokens you\'ve entered.'}
               {' '}<strong>✏️ Edit the token cap</strong> by clicking "Edit" next to the cap value above.
             </p>
             <p className="text-sm text-gray-700">
