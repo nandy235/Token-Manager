@@ -28,6 +28,17 @@ export default function TokenManager() {
   const [pdfDistrictFilter, setPdfDistrictFilter] = useState('all');
   const [pdfStations, setPdfStations] = useState([]);
   
+  // Filter shops based on PDF filters
+  const filteredShops = shops.filter(shop => {
+    if (pdfDistrictFilter !== 'all' && shop.district !== pdfDistrictFilter) {
+      return false;
+    }
+    if (pdfStationFilter !== 'all' && shop.station !== pdfStationFilter) {
+      return false;
+    }
+    return true;
+  });
+
   const totalTokensUsed = shops.reduce((sum, shop) => sum + shop.tokens, 0);
   const remainingTokens = tokenCap - totalTokensUsed;
 
@@ -184,9 +195,8 @@ export default function TokenManager() {
 
   const addShopFromMaster = async (masterShop) => {
     try {
-      // Check if shop already exists
-      const shopId = parseInt(masterShop.gazette_code.replace(/\D/g, ''));
-      const existingShop = shops.find(s => s.id === shopId);
+      // Check if shop already exists by gazette_code
+      const existingShop = shops.find(s => s.gazette_code === masterShop.gazette_code);
       if (existingShop) {
         setSaveMessage('Shop already added!');
         setTimeout(() => setSaveMessage(''), 3000);
@@ -194,7 +204,6 @@ export default function TokenManager() {
       }
 
       const newShop = { 
-        id: shopId, 
         name: masterShop.locality,
         gazette_code: masterShop.gazette_code,
         category: masterShop.category,
@@ -214,13 +223,11 @@ export default function TokenManager() {
       if (response.ok) {
         const data = await response.json();
         // Update shops state immediately with the new shop
-        const addedShop = {
-          ...newShop,
-          ...data,
-          id: shopId // Ensure ID is correct
-        };
-        setShops([...shops, addedShop]);
+        setShops([...shops, data]);
         setSaveMessage('Shop added successfully!');
+        setTimeout(() => setSaveMessage(''), 3000);
+      } else if (response.status === 409) {
+        setSaveMessage('Shop with this gazette code already exists!');
         setTimeout(() => setSaveMessage(''), 3000);
       } else {
         throw new Error('Failed to add shop');
@@ -361,12 +368,16 @@ export default function TokenManager() {
     
     // Determine report title based on filters
     let reportTitle = 'Shop Token Manager Report';
+    let isStationWise = false;
+    
     if (pdfDistrictFilter !== 'all' && pdfStationFilter === 'all') {
       reportTitle = `${pdfDistrictFilter.toUpperCase()} DISTRICT SUMMARY`;
     } else if (pdfDistrictFilter !== 'all' && pdfStationFilter !== 'all') {
-      reportTitle = `${pdfDistrictFilter.toUpperCase()} DISTRICT - ${pdfStationFilter.toUpperCase()} STATION SUMMARY`;
+      reportTitle = `${pdfStationFilter.toUpperCase()} Token Management`;
+      isStationWise = true;
     } else if (pdfDistrictFilter === 'all' && pdfStationFilter !== 'all') {
-      reportTitle = `${pdfStationFilter.toUpperCase()} STATION SUMMARY`;
+      reportTitle = `${pdfStationFilter.toUpperCase()} Token Management`;
+      isStationWise = true;
     }
     
     // Group shops by district, then by station
@@ -459,40 +470,75 @@ export default function TokenManager() {
         const stationShops = stations[station];
         const stationTotal = stationShops.reduce((sum, shop) => sum + shop.tokens, 0);
         
-        tablesHtml += `
-          <div class="station-section">
-            <div class="simple-header">
-              <span><strong>DISTRICT:</strong> ${district}</span>
-              <span><strong>STATION:</strong> ${station}</span>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>S. No</th>
-                  <th>Shop Name</th>
-                  <th>Avg Sale</th>
-                  <th>Expected Tokens</th>
-                  <th>Tokens</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${stationShops.map((shop) => `
+        if (isStationWise) {
+          // Station-wise format: Show district/station header once, then individual shops
+          tablesHtml += `
+            <div class="station-section">
+              <div class="simple-header">
+                <span><strong>DISTRICT:</strong> ${district}</span>
+                <span><strong>STATION:</strong> ${station} <strong>Tokens:</strong> ${stationTotal}</span>
+              </div>
+              <table>
+                <thead>
                   <tr>
-                    <td>${globalIndex++}</td>
-                    <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}${shop.category && shop.category.toUpperCase() !== 'OPEN' ? ` (${shop.category})` : ''}</td>
-                    <td>${shop.avg_sale || ''}</td>
-                    <td>${shop.expected_tokens || 0}</td>
-                    <td>${shop.tokens}</td>
+                    <th>S. No</th>
+                    <th>Shop Name</th>
+                    <th>Avg Sale</th>
+                    <th>Expected Tokens</th>
+                    <th>Our Tokens</th>
                   </tr>
-                `).join('')}
-                <tr class="subtotal-row">
-                  <td colspan="4" style="text-align: right; font-weight: bold;">${station} - Total:</td>
-                  <td style="font-weight: bold; background-color: #E0E7FF;">${stationTotal}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        `;
+                </thead>
+                <tbody>
+                  ${stationShops.map((shop, index) => `
+                    <tr>
+                      <td>${globalIndex++}</td>
+                      <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}</td>
+                      <td>${shop.avg_sale || ''}</td>
+                      <td>${shop.expected_tokens || 0}</td>
+                      <td style="font-weight: bold; color: #4F46E5;">${shop.tokens || 0}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          `;
+        } else {
+          // Regular format: Detailed shop table
+          tablesHtml += `
+            <div class="station-section">
+              <div class="simple-header">
+                <span><strong>DISTRICT:</strong> ${district}</span>
+                <span><strong>STATION:</strong> ${station}</span>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>S. No</th>
+                    <th>Shop Name</th>
+                    <th>Avg Sale</th>
+                    <th>Expected Tokens</th>
+                    <th>Tokens</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${stationShops.map((shop) => `
+                    <tr>
+                      <td>${globalIndex++}</td>
+                      <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}${shop.category && shop.category.toUpperCase() !== 'OPEN' ? ` (${shop.category})` : ''}</td>
+                      <td>${shop.avg_sale || ''}</td>
+                      <td>${shop.expected_tokens || 0}</td>
+                      <td>${shop.tokens}</td>
+                    </tr>
+                  `).join('')}
+                  <tr class="subtotal-row">
+                    <td colspan="4" style="text-align: right; font-weight: bold;">${station} - Total:</td>
+                    <td style="font-weight: bold; background-color: #E0E7FF;">${stationTotal}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          `;
+        }
       });
     });
     
@@ -615,6 +661,7 @@ export default function TokenManager() {
         <h1>${reportTitle}</h1>
         <p class="info">Generated on: ${currentDate}</p>
         
+        ${!isStationWise ? `
         <div class="summary">
           <div class="summary-item">
             <div class="summary-label">Total Token Cap</div>
@@ -633,8 +680,9 @@ export default function TokenManager() {
             <div class="summary-value">${tokenCap - filteredShops.reduce((sum, shop) => sum + shop.tokens, 0)}</div>
           </div>
         </div>
+        ` : ''}
 
-        ${summaryHtml}
+        ${!isStationWise ? summaryHtml : ''}
 
         ${tablesHtml}
 
@@ -701,28 +749,30 @@ export default function TokenManager() {
             )}
           </div>
 
-          {/* Token Distribution Info */}
-          <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 mb-6">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-sm text-gray-600">Total Shops</p>
-                <p className="text-2xl font-bold text-indigo-600">{shops.length}</p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Tokens Used</p>
-                <p className="text-2xl font-bold text-indigo-600">{totalTokensUsed}</p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Remaining</p>
-                <p className={`text-2xl font-bold ${remainingTokens === 0 ? 'text-red-600' : 'text-green-600'}`}>
-                  {remainingTokens}
-                </p>
+          {/* Token Distribution Info - Only show when no PDF filters are applied */}
+          {(pdfDistrictFilter === 'all' && pdfStationFilter === 'all') && (
+            <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 mb-6">
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-sm text-gray-600">Total Shops</p>
+                  <p className="text-2xl font-bold text-indigo-600">{shops.length}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">Tokens Used</p>
+                  <p className="text-2xl font-bold text-indigo-600">{totalTokensUsed}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">Remaining</p>
+                  <p className={`text-2xl font-bold ${remainingTokens === 0 ? 'text-red-600' : 'text-green-600'}`}>
+                    {remainingTokens}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
-          {/* Warning when at cap */}
-          {remainingTokens === 0 && (
+          {/* Warning when at cap - Only show when no PDF filters are applied */}
+          {remainingTokens === 0 && (pdfDistrictFilter === 'all' && pdfStationFilter === 'all') && (
             <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-6 flex items-center gap-3">
               <AlertCircle className="text-red-600" size={24} />
               <p className="text-red-800 font-medium">Token limit reached! Remove tokens from other shops to allocate more.</p>
@@ -812,37 +862,6 @@ export default function TokenManager() {
           <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6">
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-lg font-semibold text-gray-800">📋 Available Shops ({masterShops.length})</h3>
-              <div className="flex items-center gap-3">
-                <select
-                  value={pdfDistrictFilter}
-                  onChange={(e) => setPdfDistrictFilter(e.target.value)}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-sm"
-                >
-                  <option value="all">All Districts</option>
-                  {districts.map(district => (
-                    <option key={district.name} value={district.name}>{district.name}</option>
-                  ))}
-                </select>
-                <select
-                  value={pdfStationFilter}
-                  onChange={(e) => setPdfStationFilter(e.target.value)}
-                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-sm"
-                  disabled={pdfDistrictFilter === 'all'}
-                >
-                  <option value="all">All Stations</option>
-                  {pdfStations.map(station => (
-                    <option key={station.name} value={station.name}>{station.name}</option>
-                  ))}
-                </select>
-                <button
-                  onClick={downloadPDF}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2 text-sm font-semibold"
-                  title="Download PDF Report"
-                >
-                  <Save size={18} />
-                  Download PDF
-                </button>
-              </div>
             </div>
             
             <div className="bg-white border-2 border-gray-200 rounded-lg overflow-x-auto max-h-96 overflow-y-auto">
@@ -867,9 +886,7 @@ export default function TokenManager() {
                     </tr>
                   ) : (
                     masterShops.map((shop) => {
-                      const shopId = parseInt(shop.gazette_code.replace(/\D/g, ''));
                       const isSelected = shops.some(s => 
-                        s.id === shopId || 
                         s.gazette_code === shop.gazette_code ||
                         s.name === shop.locality
                       );
@@ -916,9 +933,67 @@ export default function TokenManager() {
             </div>
           )}
 
+          {/* PDF Filters and Download */}
+          <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4 mb-6">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-semibold text-gray-800">📄 PDF Report & Filters</h3>
+              <div className="flex items-center gap-3">
+                <select
+                  value={pdfDistrictFilter}
+                  onChange={(e) => setPdfDistrictFilter(e.target.value)}
+                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 text-sm"
+                >
+                  <option value="all">All Districts</option>
+                  {districts.map(district => (
+                    <option key={district.name} value={district.name}>{district.name}</option>
+                  ))}
+                </select>
+                <select
+                  value={pdfStationFilter}
+                  onChange={(e) => setPdfStationFilter(e.target.value)}
+                  className="px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 text-sm"
+                  disabled={pdfDistrictFilter === 'all'}
+                >
+                  <option value="all">All Stations</option>
+                  {pdfStations.map(station => (
+                    <option key={station.name} value={station.name}>{station.name}</option>
+                  ))}
+                </select>
+                <button
+                  onClick={downloadPDF}
+                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2 text-sm font-semibold"
+                  title="Download PDF Report"
+                >
+                  <Save size={18} />
+                  Download PDF
+                </button>
+              </div>
+            </div>
+          </div>
+
           {/* Selected Shops - Token Allocation */}
           <div className="mb-4">
-            <h3 className="text-lg font-semibold text-gray-800">✅ Selected Shops for Token Allocation ({shops.length})</h3>
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-semibold text-gray-800">
+                ✅ Selected Shops for Token Allocation ({filteredShops.length})
+                {pdfDistrictFilter !== 'all' || pdfStationFilter !== 'all' ? (
+                  <span className="text-sm font-normal text-gray-600 ml-2">
+                    (Filtered: {pdfDistrictFilter !== 'all' ? pdfDistrictFilter : 'All Districts'} - {pdfStationFilter !== 'all' ? pdfStationFilter : 'All Stations'})
+                  </span>
+                ) : null}
+              </h3>
+              {(pdfDistrictFilter !== 'all' || pdfStationFilter !== 'all') && (
+                <button
+                  onClick={() => {
+                    setPdfDistrictFilter('all');
+                    setPdfStationFilter('all');
+                  }}
+                  className="bg-gray-500 text-white px-3 py-1 rounded-lg hover:bg-gray-600 transition text-sm"
+                >
+                  Clear Filter
+                </button>
+              )}
+            </div>
           </div>
           
           <div className="bg-white border-2 border-gray-200 rounded-lg overflow-x-auto">
@@ -934,14 +1009,17 @@ export default function TokenManager() {
                 </tr>
               </thead>
               <tbody>
-                {shops.length === 0 ? (
+                {filteredShops.length === 0 ? (
                   <tr>
                     <td colSpan="6" className="px-6 py-8 text-center text-gray-500">
-                      No shops selected yet. Search and select shops from the list above to allocate tokens.
+                      {shops.length === 0 
+                        ? "No shops selected yet. Search and select shops from the list above to allocate tokens."
+                        : `No shops match the current filter (${pdfDistrictFilter !== 'all' ? pdfDistrictFilter : 'All Districts'} - ${pdfStationFilter !== 'all' ? pdfStationFilter : 'All Stations'}). Try adjusting the PDF filters above.`
+                      }
                     </td>
                   </tr>
                 ) : (
-                  shops.map((shop, index) => (
+                  filteredShops.map((shop, index) => (
                     <tr key={shop.id} className="border-t border-gray-200 hover:bg-gray-50">
                       <td className="px-4 py-4 text-gray-800">{index + 1}</td>
                       <td className="px-6 py-4 text-gray-800 font-medium">

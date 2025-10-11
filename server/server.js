@@ -292,28 +292,22 @@ app.get('/api/excise-stations', async (req, res) => {
 // GET all shops with optional filtering
 app.get('/api/shops', async (req, res) => {
   try {
-    const { district_id, station_id } = req.query;
-    let query = `
-      SELECT s.*, d.name as district_name, e.name as station_name 
-      FROM shops s
-      LEFT JOIN districts d ON s.district_id = d.id
-      LEFT JOIN excise_stations e ON s.station_id = e.id
-      WHERE 1=1
-    `;
+    const { district, station } = req.query;
+    let query = `SELECT * FROM shops WHERE 1=1`;
     const params = [];
     let paramCount = 1;
     
-    if (district_id && district_id !== 'all') {
-      query += ` AND s.district_id = $${paramCount++}`;
-      params.push(district_id);
+    if (district && district !== 'all') {
+      query += ` AND district = $${paramCount++}`;
+      params.push(district);
     }
     
-    if (station_id && station_id !== 'all') {
-      query += ` AND s.station_id = $${paramCount++}`;
-      params.push(station_id);
+    if (station && station !== 'all') {
+      query += ` AND station = $${paramCount++}`;
+      params.push(station);
     }
     
-    query += ' ORDER BY s.id ASC';
+    query += ' ORDER BY id ASC';
     const result = await pool.query(query, params);
     res.json(result.rows);
   } catch (error) {
@@ -324,13 +318,22 @@ app.get('/api/shops', async (req, res) => {
 // POST create new shop
 app.post('/api/shops', async (req, res) => {
   try {
-    const { id, name, expected_tokens, avg_sale, tokens, district, station, gazette_code, category } = req.body;
+    const { name, expected_tokens, avg_sale, tokens, district, station, gazette_code, category } = req.body;
+    
+    // Validate required fields
+    if (!name || !gazette_code) {
+      return res.status(400).json({ error: 'Name and gazette_code are required' });
+    }
+    
     const result = await pool.query(
-      'INSERT INTO shops (id, name, expected_tokens, avg_sale, tokens, district, station, gazette_code, category) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
-      [id, name, expected_tokens || 0, avg_sale || '', tokens || 0, district || null, station || null, gazette_code || null, category || null]
+      'INSERT INTO shops (name, expected_tokens, avg_sale, tokens, district, station, gazette_code, category) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
+      [name, expected_tokens || 0, avg_sale || '', tokens || 0, district || null, station || null, gazette_code, category || null]
     );
     res.status(201).json(result.rows[0]);
   } catch (error) {
+    if (error.code === '23505') { // Unique constraint violation
+      return res.status(409).json({ error: 'Shop with this gazette code already exists' });
+    }
     res.status(500).json({ error: 'Failed to create shop', message: error.message });
   }
 });
@@ -339,7 +342,7 @@ app.post('/api/shops', async (req, res) => {
 app.put('/api/shops/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { expected_tokens, avg_sale, tokens, district_id, station_id } = req.body;
+    const { expected_tokens, avg_sale, tokens, district, station, gazette_code, category } = req.body;
     
     // Build dynamic update query
     const updates = [];
@@ -358,13 +361,21 @@ app.put('/api/shops/:id', async (req, res) => {
       updates.push(`tokens = $${paramCount++}`);
       values.push(tokens);
     }
-    if (district_id !== undefined) {
-      updates.push(`district_id = $${paramCount++}`);
-      values.push(district_id || null);
+    if (district !== undefined) {
+      updates.push(`district = $${paramCount++}`);
+      values.push(district || null);
     }
-    if (station_id !== undefined) {
-      updates.push(`station_id = $${paramCount++}`);
-      values.push(station_id || null);
+    if (station !== undefined) {
+      updates.push(`station = $${paramCount++}`);
+      values.push(station || null);
+    }
+    if (gazette_code !== undefined) {
+      updates.push(`gazette_code = $${paramCount++}`);
+      values.push(gazette_code || null);
+    }
+    if (category !== undefined) {
+      updates.push(`category = $${paramCount++}`);
+      values.push(category || null);
     }
     
     updates.push(`updated_at = CURRENT_TIMESTAMP`);
