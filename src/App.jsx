@@ -8,7 +8,9 @@ const API_URL = import.meta.env.VITE_API_URL ||
     : 'https://token-manager-production.up.railway.app');
 
 export default function TokenManager() {
-  const [shops, setShops] = useState([]);
+  const [mode, setMode] = useState('planning'); // 'planning' or 'real'
+  const [shops, setShops] = useState([]); // Planning mode shops
+  const [realShops, setRealShops] = useState([]); // Real mode shops
   const [saveMessage, setSaveMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const [tokenCap, setTokenCap] = useState(200);
@@ -28,8 +30,11 @@ export default function TokenManager() {
   const [pdfDistrictFilter, setPdfDistrictFilter] = useState('all');
   const [pdfStations, setPdfStations] = useState([]);
   
+  // Get current shops based on mode
+  const currentShops = mode === 'planning' ? shops : realShops;
+  
   // Filter shops based on PDF filters
-  const filteredShops = shops.filter(shop => {
+  const filteredShops = currentShops.filter(shop => {
     if (pdfDistrictFilter !== 'all' && shop.district !== pdfDistrictFilter) {
       return false;
     }
@@ -60,10 +65,10 @@ export default function TokenManager() {
     }
   }, [selectedDistrict]);
   
-  // Re-fetch shops when filter changes
+  // Re-fetch shops when filter changes or mode changes
   useEffect(() => {
     fetchShops();
-  }, [selectedDistrict, selectedStation]);
+  }, [selectedDistrict, selectedStation, mode]);
   
   // Fetch PDF stations when PDF district changes
   useEffect(() => {
@@ -77,7 +82,8 @@ export default function TokenManager() {
 
   const fetchShops = async () => {
     try {
-      let url = `${API_URL}/api/shops`;
+      const endpoint = mode === 'planning' ? '/api/shops' : '/api/real';
+      let url = `${API_URL}${endpoint}`;
       const params = new URLSearchParams();
       
       if (selectedDistrict && selectedDistrict !== 'all') {
@@ -94,7 +100,12 @@ export default function TokenManager() {
       
       const response = await fetch(url);
       const data = await response.json();
-      setShops(data);
+      
+      if (mode === 'planning') {
+        setShops(data);
+      } else {
+        setRealShops(data);
+      }
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch shops:', error);
@@ -195,26 +206,41 @@ export default function TokenManager() {
 
   const addShopFromMaster = async (masterShop) => {
     try {
-      // Check if shop already exists by gazette_code
-      const existingShop = shops.find(s => s.gazette_code === masterShop.gazette_code);
+      // Check if shop already exists by gazette_code in current mode
+      const existingShop = currentShops.find(s => s.gazette_code === masterShop.gazette_code);
       if (existingShop) {
         setSaveMessage('Shop already added!');
         setTimeout(() => setSaveMessage(''), 3000);
         return;
       }
 
-      const newShop = { 
-        name: masterShop.locality,
-        gazette_code: masterShop.gazette_code,
-        category: masterShop.category,
-        district: masterShop.district,
-        station: masterShop.excise_station,
-        tokens: 0,
-        expected_tokens: 0,
-        avg_sale: ''
-      };
+      const endpoint = mode === 'planning' ? '/api/shops' : '/api/real';
       
-      const response = await fetch(`${API_URL}/api/shops`, {
+      let newShop;
+      if (mode === 'planning') {
+        newShop = { 
+          name: masterShop.locality,
+          gazette_code: masterShop.gazette_code,
+          category: masterShop.category,
+          district: masterShop.district,
+          station: masterShop.excise_station,
+          tokens: 0,
+          expected_tokens: 0,
+          avg_sale: ''
+        };
+      } else {
+        newShop = { 
+          name: masterShop.locality,
+          gazette_code: masterShop.gazette_code,
+          category: masterShop.category,
+          district: masterShop.district,
+          station: masterShop.excise_station,
+          total_tokens: 0,
+          allocated_tokens: ''
+        };
+      }
+      
+      const response = await fetch(`${API_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newShop)
@@ -222,8 +248,12 @@ export default function TokenManager() {
       
       if (response.ok) {
         const data = await response.json();
-        // Update shops state immediately with the new shop
-        setShops([...shops, data]);
+        // Update correct shops state based on mode
+        if (mode === 'planning') {
+          setShops([...shops, data]);
+        } else {
+          setRealShops([...realShops, data]);
+        }
         setSaveMessage('Shop added successfully!');
         setTimeout(() => setSaveMessage(''), 3000);
       } else if (response.status === 409) {
@@ -241,10 +271,16 @@ export default function TokenManager() {
 
   const removeShop = async (id) => {
     try {
-      await fetch(`${API_URL}/api/shops/${id}`, {
+      const endpoint = mode === 'planning' ? '/api/shops' : '/api/real';
+      await fetch(`${API_URL}${endpoint}/${id}`, {
         method: 'DELETE'
       });
-      setShops(shops.filter(shop => shop.id !== id));
+      
+      if (mode === 'planning') {
+        setShops(shops.filter(shop => shop.id !== id));
+      } else {
+        setRealShops(realShops.filter(shop => shop.id !== id));
+      }
     } catch (error) {
       console.error('Failed to delete shop:', error);
       setSaveMessage('Error deleting shop!');
@@ -316,6 +352,45 @@ export default function TokenManager() {
     }
   };
 
+  const updateTotalTokens = async (id, value) => {
+    const numValue = parseInt(value) || 0;
+    
+    try {
+      await fetch(`${API_URL}/api/real/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ total_tokens: numValue })
+      });
+      
+      setRealShops(realShops.map(s => 
+        s.id === id ? { ...s, total_tokens: numValue } : s
+      ));
+    } catch (error) {
+      console.error('Failed to update total tokens:', error);
+      setSaveMessage('Error updating total tokens!');
+      setTimeout(() => setSaveMessage(''), 3000);
+    }
+  };
+
+  const updateAllocatedTokens = async (id, value) => {
+    try {
+      // Update only allocated_tokens (not total_tokens)
+      await fetch(`${API_URL}/api/real/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ allocated_tokens: value })
+      });
+      
+      setRealShops(realShops.map(s => 
+        s.id === id ? { ...s, allocated_tokens: value } : s
+      ));
+    } catch (error) {
+      console.error('Failed to update allocated tokens:', error);
+      setSaveMessage('Error updating allocated tokens!');
+      setTimeout(() => setSaveMessage(''), 3000);
+    }
+  };
+
   const updateTokenCap = async () => {
     try {
       const newCap = parseInt(tempCap);
@@ -355,8 +430,8 @@ export default function TokenManager() {
     
     console.log('PDF filters:', { pdfDistrictFilter, pdfStationFilter });
     
-    // Filter shops based on PDF filters
-    let filteredShops = shops;
+    // Filter shops based on PDF filters - use currentShops based on mode
+    let filteredShops = currentShops;
     if (pdfDistrictFilter !== 'all') {
       filteredShops = filteredShops.filter(shop => shop.district === pdfDistrictFilter);
     }
@@ -369,15 +444,19 @@ export default function TokenManager() {
     // Determine report title based on filters
     let reportTitle = 'Shop Token Manager Report';
     let isStationWise = false;
+    let isFiltered = false; // Flag to indicate if any filter is applied (for summary)
     
     if (pdfDistrictFilter !== 'all' && pdfStationFilter === 'all') {
       reportTitle = `${pdfDistrictFilter.toUpperCase()} DISTRICT SUMMARY`;
+      isFiltered = true;
     } else if (pdfDistrictFilter !== 'all' && pdfStationFilter !== 'all') {
       reportTitle = `${pdfStationFilter.toUpperCase()} Token Management`;
       isStationWise = true;
+      isFiltered = true;
     } else if (pdfDistrictFilter === 'all' && pdfStationFilter !== 'all') {
       reportTitle = `${pdfStationFilter.toUpperCase()} Token Management`;
       isStationWise = true;
+      isFiltered = true;
     }
     
     // Group shops by district, then by station
@@ -397,7 +476,13 @@ export default function TokenManager() {
       summaryByDistrict[district] = [];
       Object.keys(stations).sort().forEach(station => {
         const stationShops = stations[station];
-        const tokens = stationShops.reduce((sum, shop) => sum + shop.tokens, 0);
+        const tokens = mode === 'planning'
+          ? stationShops.reduce((sum, shop) => sum + shop.tokens, 0)
+          : stationShops.reduce((sum, shop) => {
+              const allocatedTokens = shop.allocated_tokens || '';
+              const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+              return sum + count;
+            }, 0);
         summaryByDistrict[district].push({ station, tokens });
       });
     });
@@ -468,7 +553,13 @@ export default function TokenManager() {
       
       Object.keys(stations).sort().forEach(station => {
         const stationShops = stations[station];
-        const stationTotal = stationShops.reduce((sum, shop) => sum + shop.tokens, 0);
+        const stationTotal = mode === 'planning' 
+          ? stationShops.reduce((sum, shop) => sum + shop.tokens, 0)
+          : stationShops.reduce((sum, shop) => {
+              const allocatedTokens = shop.allocated_tokens || '';
+              const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
+              return sum + count;
+            }, 0);
         
         if (isStationWise) {
           // Station-wise format: Show district/station header once, then individual shops
@@ -483,9 +574,15 @@ export default function TokenManager() {
                   <tr>
                     <th>S. No</th>
                     <th>Shop Name</th>
-                    <th>Avg Sale</th>
-                    <th>Expected Tokens</th>
-                    <th>Our Tokens</th>
+                    ${mode === 'planning' ? `
+                      <th>Avg Sale</th>
+                      <th>Expected Tokens</th>
+                      <th>Our Tokens</th>
+                    ` : `
+                      <th>Total Tokens</th>
+                      <th>Our Allocated Tokens</th>
+                      <th>Total Allocated Tokens</th>
+                    `}
                   </tr>
                 </thead>
                 <tbody>
@@ -493,9 +590,15 @@ export default function TokenManager() {
                     <tr>
                       <td>${globalIndex++}</td>
                       <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}</td>
-                      <td>${shop.avg_sale || ''}</td>
-                      <td>${shop.expected_tokens || 0}</td>
-                      <td style="font-weight: bold; color: #4F46E5;">${shop.tokens || 0}</td>
+                      ${mode === 'planning' ? `
+                        <td>${shop.avg_sale || ''}</td>
+                        <td>${shop.expected_tokens || 0}</td>
+                        <td style="font-weight: bold; color: #4F46E5;">${shop.tokens || 0}</td>
+                      ` : `
+                        <td>${shop.total_tokens || 0}</td>
+                        <td>${shop.allocated_tokens || ''}</td>
+                        <td style="font-weight: bold; color: #4F46E5;">${shop.allocated_tokens ? shop.allocated_tokens.split(',').filter(t => t.trim() !== '').length : 0}</td>
+                      `}
                     </tr>
                   `).join('')}
                 </tbody>
@@ -504,20 +607,27 @@ export default function TokenManager() {
           `;
         } else {
           // Regular format: Detailed shop table
+          const colspanValue = mode === 'planning' ? '4' : '4';
           tablesHtml += `
             <div class="station-section">
               <div class="simple-header">
                 <span><strong>DISTRICT:</strong> ${district}</span>
-                <span><strong>STATION:</strong> ${station}</span>
+                <span><strong>STATION:</strong> ${station} <strong>Tokens:</strong> ${stationTotal}</span>
               </div>
               <table>
                 <thead>
                   <tr>
                     <th>S. No</th>
                     <th>Shop Name</th>
-                    <th>Avg Sale</th>
-                    <th>Expected Tokens</th>
-                    <th>Tokens</th>
+                    ${mode === 'planning' ? `
+                      <th>Avg Sale</th>
+                      <th>Expected Tokens</th>
+                      <th>Tokens</th>
+                    ` : `
+                      <th>Total Tokens</th>
+                      <th>Our Allocated Tokens</th>
+                      <th>Total Allocated Tokens</th>
+                    `}
                   </tr>
                 </thead>
                 <tbody>
@@ -525,13 +635,19 @@ export default function TokenManager() {
                     <tr>
                       <td>${globalIndex++}</td>
                       <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}${shop.category && shop.category.toUpperCase() !== 'OPEN' ? ` (${shop.category})` : ''}</td>
-                      <td>${shop.avg_sale || ''}</td>
-                      <td>${shop.expected_tokens || 0}</td>
-                      <td>${shop.tokens}</td>
+                      ${mode === 'planning' ? `
+                        <td>${shop.avg_sale || ''}</td>
+                        <td>${shop.expected_tokens || 0}</td>
+                        <td>${shop.tokens}</td>
+                      ` : `
+                        <td>${shop.total_tokens || 0}</td>
+                        <td>${shop.allocated_tokens || ''}</td>
+                        <td>${shop.allocated_tokens ? shop.allocated_tokens.split(',').filter(t => t.trim() !== '').length : 0}</td>
+                      `}
                     </tr>
                   `).join('')}
                   <tr class="subtotal-row">
-                    <td colspan="4" style="text-align: right; font-weight: bold;">${station} - Total:</td>
+                    <td colspan="${colspanValue}" style="text-align: right; font-weight: bold;">${station} - Total:</td>
                     <td style="font-weight: bold; background-color: #E0E7FF;">${stationTotal}</td>
                   </tr>
                 </tbody>
@@ -661,7 +777,7 @@ export default function TokenManager() {
         <h1>${reportTitle}</h1>
         <p class="info">Generated on: ${currentDate}</p>
         
-        ${!isStationWise ? `
+        ${!isFiltered ? `
         <div class="summary">
           <div class="summary-item">
             <div class="summary-label">Total Token Cap</div>
@@ -709,6 +825,45 @@ export default function TokenManager() {
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Shop Token Manager</h1>
+          
+          {/* Mode Selection Radio Buttons */}
+          <div className="mb-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border-2 border-purple-200">
+            <div className="flex items-center gap-8">
+              <label className="flex items-center gap-3 cursor-pointer group">
+                <input
+                  type="radio"
+                  name="mode"
+                  value="planning"
+                  checked={mode === 'planning'}
+                  onChange={(e) => setMode(e.target.value)}
+                  className="w-5 h-5 text-purple-600 cursor-pointer"
+                />
+                <span className={`text-lg font-semibold ${mode === 'planning' ? 'text-purple-700' : 'text-gray-600'} group-hover:text-purple-700 transition`}>
+                  📋 Planning Mode
+                </span>
+              </label>
+              
+              <label className="flex items-center gap-3 cursor-pointer group">
+                <input
+                  type="radio"
+                  name="mode"
+                  value="real"
+                  checked={mode === 'real'}
+                  onChange={(e) => setMode(e.target.value)}
+                  className="w-5 h-5 text-blue-600 cursor-pointer"
+                />
+                <span className={`text-lg font-semibold ${mode === 'real' ? 'text-blue-700' : 'text-gray-600'} group-hover:text-blue-700 transition`}>
+                  ⚡ Real Mode
+                </span>
+              </label>
+            </div>
+            <p className="text-sm text-gray-600 mt-2">
+              {mode === 'planning' 
+                ? '📝 Planning mode for initial token planning and estimation' 
+                : '✅ Real mode for actual token allocation tracking'}
+            </p>
+          </div>
+          
           <div className="flex items-center gap-3 mb-6">
             <p className="text-gray-600">Total Token Cap:</p>
             {editingCap ? (
@@ -886,7 +1041,7 @@ export default function TokenManager() {
                     </tr>
                   ) : (
                     masterShops.map((shop) => {
-                      const isSelected = shops.some(s => 
+                      const isSelected = currentShops.some(s => 
                         s.gazette_code === shop.gazette_code ||
                         s.name === shop.locality
                       );
@@ -1002,17 +1157,27 @@ export default function TokenManager() {
                 <tr>
                   <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">S. No</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Shop Name</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Avg Sale</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Expected Tokens</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tokens</th>
+                  {mode === 'planning' ? (
+                    <>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Avg Sale</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Expected Tokens</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tokens</th>
+                    </>
+                  ) : (
+                    <>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Total Tokens</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Our Allocated Tokens</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Total Allocated Tokens</th>
+                    </>
+                  )}
                   <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredShops.length === 0 ? (
                   <tr>
-                    <td colSpan="6" className="px-6 py-8 text-center text-gray-500">
-                      {shops.length === 0 
+                    <td colSpan={mode === 'planning' ? "6" : "6"} className="px-6 py-8 text-center text-gray-500">
+                      {currentShops.length === 0 
                         ? "No shops selected yet. Search and select shops from the list above to allocate tokens."
                         : `No shops match the current filter (${pdfDistrictFilter !== 'all' ? pdfDistrictFilter : 'All Districts'} - ${pdfStationFilter !== 'all' ? pdfStationFilter : 'All Stations'}). Try adjusting the PDF filters above.`
                       }
@@ -1027,33 +1192,72 @@ export default function TokenManager() {
                         {shop.name}
                         {shop.category && shop.category.toUpperCase() !== 'OPEN' && ` (${shop.category})`}
                       </td>
-                      <td className="px-6 py-4">
-                        <input
-                          type="text"
-                          value={shop.avg_sale || ''}
-                          onChange={(e) => updateAvgSale(shop.id, e.target.value)}
-                          placeholder="e.g. 3.5L"
-                          className="w-28 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                        />
-                      </td>
-                      <td className="px-6 py-4">
-                        <input
-                          type="text"
-                          value={shop.expected_tokens === 0 ? '' : shop.expected_tokens}
-                          onChange={(e) => updateExpectedTokens(shop.id, e.target.value)}
-                          placeholder="0"
-                          className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
-                        />
-                      </td>
-                      <td className="px-6 py-4">
-                        <input
-                          type="text"
-                          value={shop.tokens === 0 ? '' : shop.tokens}
-                          onChange={(e) => updateTokens(shop.id, e.target.value)}
-                          placeholder="0"
-                          className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                        />
-                      </td>
+                      {mode === 'planning' ? (
+                        <>
+                          <td className="px-6 py-4">
+                            <input
+                              type="text"
+                              value={shop.avg_sale || ''}
+                              onChange={(e) => updateAvgSale(shop.id, e.target.value)}
+                              placeholder="e.g. 3.5L"
+                              className="w-28 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            />
+                          </td>
+                          <td className="px-6 py-4">
+                            <input
+                              type="text"
+                              value={shop.expected_tokens === 0 ? '' : shop.expected_tokens}
+                              onChange={(e) => updateExpectedTokens(shop.id, e.target.value)}
+                              placeholder="0"
+                              className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
+                            />
+                          </td>
+                          <td className="px-6 py-4">
+                            <input
+                              type="text"
+                              value={shop.tokens === 0 ? '' : shop.tokens}
+                              onChange={(e) => updateTokens(shop.id, e.target.value)}
+                              placeholder="0"
+                              className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+                            />
+                          </td>
+                        </>
+                      ) : (
+                        <>
+                          <td className="px-6 py-4">
+                            <input
+                              type="text"
+                              value={shop.total_tokens === 0 ? '' : shop.total_tokens}
+                              onChange={(e) => updateTotalTokens(shop.id, e.target.value)}
+                              placeholder="0"
+                              className="w-24 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            />
+                          </td>
+                          <td className="px-6 py-4">
+                            <input
+                              type="text"
+                              value={shop.allocated_tokens || ''}
+                              onChange={(e) => updateAllocatedTokens(shop.id, e.target.value)}
+                              placeholder="e.g. 8, 19, 23"
+                              className="w-40 px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 font-mono"
+                              title="Enter token numbers separated by commas"
+                            />
+                          </td>
+                          <td className="px-6 py-4">
+                            <input
+                              type="text"
+                              value={(() => {
+                                const tokens = shop.allocated_tokens || '';
+                                return tokens.trim() ? tokens.split(',').filter(token => token.trim() !== '').length : '';
+                              })()}
+                              readOnly
+                              placeholder="0"
+                              className="w-24 px-3 py-2 border-2 border-gray-200 rounded-lg bg-gray-50 text-gray-700 font-semibold cursor-not-allowed"
+                              title="Auto-calculated from allocated tokens"
+                            />
+                          </td>
+                        </>
+                      )}
                       <td className="px-4 py-4">
                         <button
                           onClick={() => removeShop(shop.id)}
@@ -1079,9 +1283,10 @@ export default function TokenManager() {
           {/* Example Info */}
           <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
             <p className="text-sm text-gray-700 mb-2">
-              <strong>How it works:</strong> Manually assign tokens to each shop. The total cannot exceed the token cap. 
-              You can allocate them however you want - some shops can have more, others less, as long as the total stays within the cap. 
-              <strong>✏️ Edit the token cap</strong> by clicking "Edit" next to the cap value above.
+              <strong>How it works:</strong> {mode === 'planning' 
+                ? 'Manually assign tokens to each shop. The total cannot exceed the token cap. You can allocate them however you want - some shops can have more, others less, as long as the total stays within the cap.'
+                : 'In Real Mode: Enter the grand total tokens in "Total Tokens" field. Then enter the specific token numbers (e.g., 8, 19, 23) in "Our Allocated Tokens" field. The "Total Allocated Tokens" column will automatically count how many tokens you\'ve entered.'}
+              {' '}<strong>✏️ Edit the token cap</strong> by clicking "Edit" next to the cap value above.
             </p>
             <p className="text-sm text-gray-700">
               <strong>📄 Save as PDF:</strong> Generate a printable PDF report of all shops and token allocations.

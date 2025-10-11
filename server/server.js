@@ -48,17 +48,33 @@ pool.connect((err, client, release) => {
     CREATE INDEX IF NOT EXISTS idx_master_shops_gazette ON master_shops(gazette_code);
   `;
   
-  // Create shops table if it doesn't exist
+  // Create shops table if it doesn't exist (Planning Mode)
   const createShopsTableQuery = `
     CREATE TABLE IF NOT EXISTS shops (
-      id BIGINT PRIMARY KEY,
+      id BIGSERIAL PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       expected_tokens INTEGER DEFAULT 0,
       avg_sale VARCHAR(50) DEFAULT '',
       tokens INTEGER DEFAULT 0,
       district VARCHAR(255),
       station VARCHAR(255),
-      gazette_code VARCHAR(50),
+      gazette_code VARCHAR(50) UNIQUE,
+      category VARCHAR(50),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+  `;
+  
+  // Create real table (Real Mode)
+  const createRealTableQuery = `
+    CREATE TABLE IF NOT EXISTS real (
+      id BIGSERIAL PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      total_tokens INTEGER DEFAULT 0,
+      allocated_tokens TEXT DEFAULT '',
+      district VARCHAR(255),
+      station VARCHAR(255),
+      gazette_code VARCHAR(50) UNIQUE,
       category VARCHAR(50),
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -69,6 +85,7 @@ pool.connect((err, client, release) => {
   const addColumnsQuery = `
     DO $$ 
     BEGIN
+      -- Shops table columns
       IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='shops' AND column_name='expected_tokens') THEN
         ALTER TABLE shops ADD COLUMN expected_tokens INTEGER DEFAULT 0;
       END IF;
@@ -90,6 +107,48 @@ pool.connect((err, client, release) => {
       END IF;
       IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='shops' AND column_name='category') THEN
         ALTER TABLE shops ADD COLUMN category VARCHAR(50);
+      END IF;
+      
+      -- Add unique constraint to gazette_code for shops
+      IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint 
+        WHERE conname = 'shops_gazette_code_unique'
+      ) THEN
+        ALTER TABLE shops ADD CONSTRAINT shops_gazette_code_unique UNIQUE (gazette_code);
+      END IF;
+      
+      -- Add unique constraint to gazette_code for real
+      IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint 
+        WHERE conname = 'real_gazette_code_unique'
+      ) THEN
+        ALTER TABLE real ADD CONSTRAINT real_gazette_code_unique UNIQUE (gazette_code);
+      END IF;
+      
+      -- Fix id column to use BIGSERIAL for shops table
+      IF EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_name='shops' AND column_name='id' 
+        AND data_type='bigint' 
+        AND column_default IS NULL
+      ) THEN
+        CREATE SEQUENCE IF NOT EXISTS shops_id_seq;
+        PERFORM setval('shops_id_seq', COALESCE((SELECT MAX(id) FROM shops), 0) + 1, false);
+        ALTER TABLE shops ALTER COLUMN id SET DEFAULT nextval('shops_id_seq');
+        ALTER SEQUENCE shops_id_seq OWNED BY shops.id;
+      END IF;
+      
+      -- Fix id column to use BIGSERIAL for real table
+      IF EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_name='real' AND column_name='id' 
+        AND data_type='bigint' 
+        AND column_default IS NULL
+      ) THEN
+        CREATE SEQUENCE IF NOT EXISTS real_id_seq;
+        PERFORM setval('real_id_seq', COALESCE((SELECT MAX(id) FROM real), 0) + 1, false);
+        ALTER TABLE real ALTER COLUMN id SET DEFAULT nextval('real_id_seq');
+        ALTER SEQUENCE real_id_seq OWNED BY real.id;
       END IF;
     END $$;
   `;
@@ -129,29 +188,39 @@ pool.connect((err, client, release) => {
       }
       console.log('✅ Shops table ready');
       
-      // Add new columns for existing tables
-      client.query(addColumnsQuery, (err, result) => {
+      // Create real table
+      client.query(createRealTableQuery, (err, result) => {
         if (err) {
-          console.error('❌ Error adding new columns:', err.stack);
-        } else {
-          console.log('✅ New columns added');
+          console.error('❌ Error creating real table:', err.stack);
+          release();
+          return;
         }
+        console.log('✅ Real table ready');
         
-        client.query(createSettingsTableQuery, (err, result) => {
+        // Add new columns for existing tables
+        client.query(addColumnsQuery, (err, result) => {
           if (err) {
-            console.error('❌ Error creating settings table:', err.stack);
-            release();
-            return;
+            console.error('❌ Error adding new columns:', err.stack);
+          } else {
+            console.log('✅ New columns added');
           }
-          console.log('✅ Settings table ready');
           
-          client.query(insertDefaultCapQuery, (err, result) => {
-            release();
+          client.query(createSettingsTableQuery, (err, result) => {
             if (err) {
-              console.error('❌ Error inserting default cap:', err.stack);
-            } else {
-              console.log('✅ Default token cap set');
+              console.error('❌ Error creating settings table:', err.stack);
+              release();
+              return;
             }
+            console.log('✅ Settings table ready');
+            
+            client.query(insertDefaultCapQuery, (err, result) => {
+              release();
+              if (err) {
+                console.error('❌ Error inserting default cap:', err.stack);
+              } else {
+                console.log('✅ Default token cap set');
+              }
+            });
           });
         });
       });
@@ -442,6 +511,129 @@ app.post('/api/shops/bulk', async (req, res) => {
     res.status(500).json({ error: 'Failed to bulk update shops', message: error.message });
   } finally {
     client.release();
+  }
+});
+
+// ============================================
+// REAL MODE ROUTES (Real table)
+// ============================================
+
+// GET all real shops with optional filtering
+app.get('/api/real', async (req, res) => {
+  try {
+    const { district, station } = req.query;
+    let query = `SELECT * FROM real WHERE 1=1`;
+    const params = [];
+    let paramCount = 1;
+    
+    if (district && district !== 'all') {
+      query += ` AND district = $${paramCount++}`;
+      params.push(district);
+    }
+    
+    if (station && station !== 'all') {
+      query += ` AND station = $${paramCount++}`;
+      params.push(station);
+    }
+    
+    query += ' ORDER BY id ASC';
+    const result = await pool.query(query, params);
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch real shops', message: error.message });
+  }
+});
+
+// POST create new real shop
+app.post('/api/real', async (req, res) => {
+  try {
+    const { name, gazette_code, category, district, station, total_tokens, allocated_tokens } = req.body;
+    
+    // Validate required fields
+    if (!name || !gazette_code) {
+      return res.status(400).json({ error: 'Name and gazette_code are required' });
+    }
+    
+    const result = await pool.query(
+      'INSERT INTO real (name, gazette_code, category, district, station, total_tokens, allocated_tokens) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+      [name, gazette_code, category || null, district || null, station || null, total_tokens || 0, allocated_tokens || '']
+    );
+    res.status(201).json(result.rows[0]);
+  } catch (error) {
+    if (error.code === '23505') { // Unique constraint violation
+      return res.status(409).json({ error: 'Shop with this gazette code already exists' });
+    }
+    res.status(500).json({ error: 'Failed to create real shop', message: error.message });
+  }
+});
+
+// PUT update real shop
+app.put('/api/real/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { total_tokens, allocated_tokens, district, station, gazette_code, category } = req.body;
+    
+    // Build dynamic update query
+    const updates = [];
+    const values = [];
+    let paramCount = 1;
+    
+    if (total_tokens !== undefined) {
+      updates.push(`total_tokens = $${paramCount++}`);
+      values.push(total_tokens);
+    }
+    if (allocated_tokens !== undefined) {
+      updates.push(`allocated_tokens = $${paramCount++}`);
+      values.push(allocated_tokens);
+    }
+    if (district !== undefined) {
+      updates.push(`district = $${paramCount++}`);
+      values.push(district || null);
+    }
+    if (station !== undefined) {
+      updates.push(`station = $${paramCount++}`);
+      values.push(station || null);
+    }
+    if (gazette_code !== undefined) {
+      updates.push(`gazette_code = $${paramCount++}`);
+      values.push(gazette_code || null);
+    }
+    if (category !== undefined) {
+      updates.push(`category = $${paramCount++}`);
+      values.push(category || null);
+    }
+    
+    updates.push(`updated_at = CURRENT_TIMESTAMP`);
+    values.push(parseInt(id));
+    
+    const result = await pool.query(
+      `UPDATE real SET ${updates.join(', ')} WHERE id = $${paramCount} RETURNING *`,
+      values
+    );
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Real shop not found' });
+    }
+    res.json(result.rows[0]);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update real shop', message: error.message });
+  }
+});
+
+// DELETE real shop
+app.delete('/api/real/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await pool.query(
+      'DELETE FROM real WHERE id = $1 RETURNING *',
+      [parseInt(id)]
+    );
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Real shop not found' });
+    }
+    res.json({ message: 'Real shop deleted successfully', shop: result.rows[0] });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete real shop', message: error.message });
   }
 });
 
