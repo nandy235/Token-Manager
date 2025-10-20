@@ -33,16 +33,30 @@ export default function TokenManager() {
   // Get current shops based on mode
   const currentShops = mode === 'planning' ? shops : realShops;
   
-  // Filter shops based on PDF filters
-  const filteredShops = currentShops.filter(shop => {
-    if (pdfDistrictFilter !== 'all' && shop.district !== pdfDistrictFilter) {
-      return false;
-    }
-    if (pdfStationFilter !== 'all' && shop.station !== pdfStationFilter) {
-      return false;
-    }
-    return true;
-  });
+  // Filter shops based on PDF filters and sort by district then gazette code
+  const filteredShops = currentShops
+    .filter(shop => {
+      if (pdfDistrictFilter !== 'all' && shop.district !== pdfDistrictFilter) {
+        return false;
+      }
+      if (pdfStationFilter !== 'all' && shop.station !== pdfStationFilter) {
+        return false;
+      }
+      return true;
+    })
+    .sort((a, b) => {
+      // First sort by district alphabetically (case-insensitive)
+      const districtA = (a.district || '').toLowerCase();
+      const districtB = (b.district || '').toLowerCase();
+      const districtCompare = districtA.localeCompare(districtB);
+      if (districtCompare !== 0) {
+        return districtCompare;
+      }
+      // Then sort by gazette_code within same district (ascending order)
+      const codeA = (a.gazette_code || '').toLowerCase();
+      const codeB = (b.gazette_code || '').toLowerCase();
+      return codeA.localeCompare(codeB, undefined, { numeric: true, sensitivity: 'base' });
+    });
 
   const totalTokensUsed = shops.reduce((sum, shop) => sum + shop.tokens, 0);
   const remainingTokens = tokenCap - totalTokensUsed;
@@ -510,6 +524,21 @@ export default function TokenManager() {
       }
     });
     
+    // Sort by district alphabetically, then by gazette_code within each district
+    filteredShops = filteredShops.sort((a, b) => {
+      // First sort by district alphabetically (case-insensitive)
+      const districtA = (a.district || '').toLowerCase();
+      const districtB = (b.district || '').toLowerCase();
+      const districtCompare = districtA.localeCompare(districtB);
+      if (districtCompare !== 0) {
+        return districtCompare;
+      }
+      // Then sort by gazette_code within same district (ascending order)
+      const codeA = (a.gazette_code || '').toLowerCase();
+      const codeB = (b.gazette_code || '').toLowerCase();
+      return codeA.localeCompare(codeB, undefined, { numeric: true, sensitivity: 'base' });
+    });
+    
     console.log('Filtered shops (excluding zero data):', filteredShops.length);
     
     // Determine report title based on filters
@@ -624,9 +653,16 @@ export default function TokenManager() {
       
       Object.keys(stations).sort().forEach(station => {
         const stationShops = stations[station];
+        // Sort shops by gazette_code in ascending order (case-insensitive, numeric-aware)
+        const sortedShops = [...stationShops].sort((a, b) => {
+          const codeA = (a.gazette_code || '').toLowerCase();
+          const codeB = (b.gazette_code || '').toLowerCase();
+          return codeA.localeCompare(codeB, undefined, { numeric: true, sensitivity: 'base' });
+        });
+        
         const stationTotal = mode === 'planning' 
-          ? stationShops.reduce((sum, shop) => sum + shop.tokens, 0)
-          : stationShops.reduce((sum, shop) => {
+          ? sortedShops.reduce((sum, shop) => sum + shop.tokens, 0)
+          : sortedShops.reduce((sum, shop) => {
               const allocatedTokens = shop.allocated_tokens || '';
               const count = allocatedTokens.trim() ? allocatedTokens.split(',').filter(t => t.trim() !== '').length : 0;
               return sum + count;
@@ -657,7 +693,7 @@ export default function TokenManager() {
                   </tr>
                 </thead>
                 <tbody>
-                  ${stationShops.map((shop, index) => `
+                  ${sortedShops.map((shop, index) => `
                     <tr>
                       <td>${globalIndex++}</td>
                       <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}</td>
@@ -702,7 +738,7 @@ export default function TokenManager() {
                   </tr>
                 </thead>
                 <tbody>
-                  ${stationShops.map((shop) => `
+                  ${sortedShops.map((shop) => `
                     <tr>
                       <td>${globalIndex++}</td>
                       <td>${shop.gazette_code && `${shop.gazette_code} - `}${shop.name}${shop.category && shop.category.toUpperCase() !== 'OPEN' ? ` (${shop.category})` : ''}</td>
